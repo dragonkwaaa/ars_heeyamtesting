@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<?php include $_SERVER['DOCUMENT_ROOT'] .  '/common/pages/head.php';
+?>
+
+<body>
+<div class="container main">
+	<div class="contents">
+		<div class="section headLineSect">
+			<a href="../" class="backArrow">
+				<img src="/common/img/backArrowThin.png">
+			</a>
+			<span class="headTitle">장바구니</span>
+			<a href="javascript:deleteCart();" class="deleteAll">전체삭제</a>
+		</div>
+		<form name="frm" id="frm" onkeypress="if(event.keyCode==13) {document.frm.submit(); return false;}">
+		<input type="hidden" name="token" value="<?=$_SESSION['token'][$Common->nowPage()]?>">
+		<input type="hidden" name="minPrice" value="">
+		<input type="hidden" name="tot" value="0">
+		<div class="section cartSect">
+			<ul class="cartItemBox" id="cartList">
+
+				<li>
+					<div class="itemTitle">오리지널 세트</div>
+					<div class="itemInfo">
+						<div class="chosenOptions">
+							<span>기본 : </span>
+							<span>20,000 원</span>
+						</div>
+						<div class="chosenOptions">
+							<span>선택 2 : </span>
+							<span>감자튀김 추가, 콜라 추가, 베이컨 추가</span>
+						</div>
+					</div>
+					<div class="btnGroup">
+						<a href="javascript:void(0);" class="deleteBtn">삭제</a>
+						<div class="countBtnGroup">
+							<a href="javascript:void(0);">-</a>
+							<span>
+								<input class="tbox smallest" value="1">
+							</span>
+							<a href="javascript:void(0);">+</a>
+						</div>
+					</div>
+				</li>
+			</ul>
+			<div class="priceInfoGroup">
+				<div class="annexPrice">
+				<!--	<div>
+						<span>추가금액</span>
+						<span>2,500 원</span>
+					</div>-->
+					<div>
+						<span>배달요금</span>
+						<span id="deliveryPrice"></span>
+					</div>
+				</div>
+				<div class="totalPrice">
+					<div>
+						<span>합계</span>
+						<span id="tot"></span>
+					</div>
+				</div>
+			</div>
+			<!-- ::: 맨 아래에 붙어있던 메뉴 추가 버튼을 여기로 옮김. single -->
+			<a class="moreItemBtn" href="/">메뉴 추가하기</a>
+		</div>
+		</form>
+		<div class="btnBox shopOrderBtn">
+			<a class="sumitBtn" href="javascript:set_order();">주문하기</a>
+		</div>
+	</div>
+</div>
+<script src="/my/js/myCart.js">
+</script>
+</body>
+</html>
