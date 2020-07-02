@@ -1,0 +1,3178 @@
+/* :: ksg_20200129_2130 open  */
+/* :: ui 개념 */
+.f_orange {
+	color : #fb6d3a;
+}
+.tip {
+	font-size : 10px;
+	color : #9f9f9f;
+}
+/* :: ksg_20200129_2130 close  */
+
+
+html, body{
+	/* overflow:auto; */
+	background-color : #fff;
+}
+.container{
+	max-width:450px;
+	margin:0 auto;
+	position:relative;
+	min-height: 100%;
+}
+.contents {
+	background-color: #fff;
+	padding-bottom : 60px;
+	position :relative;
+}
+.contents.overlay:after {
+	content : "";
+	position : absolute;
+	top : 0;
+	left : 0;
+	width : 100%;
+	height : 100%;
+	background-color : rgba(0, 0, 0, 0.5);	
+	z-index : 5;
+}
+.section {
+	padding : 0 22px;
+	position : relative;
+}
+.section.headLineSect {
+	width : 100%;
+	/* max-width : 720px; */
+	max-width : 450px;
+	height : 55px;
+	background-color : #fff;
+	border-bottom : 1px solid #eeeeee;
+	position : fixed;
+	top : 0;
+	z-index : 15;
+	text-align : center;
+	padding : 0;
+}
+.section.cartSect {
+	padding-top : 55px;
+	padding-bottom : 25px;
+}
+.popup {
+	display : none;
+	position : fixed;
+	top : 50%;
+	left : 50%;
+	transform : translate(-50%, -50%);
+	-webkit-transform : translate(-50%, -50%);
+	width : calc(100% - 20px);
+	z-index : 100;
+}
+.popup.activated {
+	display : block;
+}
+
+
+.relative {
+	position :relative;
+}
+.f_main {
+	color : #ef5b5c;
+}
+.f_white {
+	color : #fff;
+}
+.f_bold {
+	font-weight : 600;
+}
+.col_main {
+	background-color : #ef5b5c;
+}
+.marginB10 {
+	margin-bottom : 10px;
+}
+input[type="checkbox"],
+input[type="radio"] {
+	width : 100%;
+	height : 20px;
+	position : absolute;
+	top : 0;
+	right : 0;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance : none;
+	outline : none;
+	border : none;
+	margin : 0;
+}
+input[type="checkbox"]:checked + label {
+	display : block;
+	width : 20px;
+	height : 20px;
+	background : url("/common/img/checkboxGrey_on.png") no-repeat center / 100%;
+}
+input[type="checkbox"]:not(:checked) + label {
+	display : block;
+	width : 20px;
+	height : 20px;
+	background : url("/common/img/checkboxGrey_off.png") no-repeat center / 100%;
+}
+
+input[type="radio"]:checked + label {
+	display : block;
+	width : 20px;
+	height : 20px;
+	background : url("/common/img/dotRadio_on.png") no-repeat center / 100%;
+}
+input[type="radio"]:not(:checked) + label {
+	display : block;
+	width : 20px;
+	height : 20px;
+	background : url("/common/img/radio_off.png") no-repeat center / 100%;
+}
+.headTitle {
+	line-height : 55px;
+	font-size : 18px;
+	font-weight : 600;
+}
+.backBtn {
+	position : absolute;
+	width : 100%;
+	height : 60px;
+	line-height : 60px;
+	color : #fff;
+	left : 0;
+	top : 0;
+	background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0));
+	z-index : 10;
+}
+.backBtn img {
+	width : 15px;
+	height : 15px;
+	padding-left : 20px;
+}
+.backArrow {
+	position : absolute;
+	width : 9px;
+	height : 18px;
+	left : 22px;
+	top : 20px;
+}
+.backArrow img {
+	width : 100%;
+	height : 100%;
+}
+.deleteAll {
+	position : absolute;
+	right : 22px;
+	top : 20px;
+	font-size : 15px;
+}
+
+.tbox {
+    border: 1px solid #cccccc;
+    height: 30px;
+    background-color: #fff;
+    font-size: 12px;
+    color: #3b3b3b;
+    padding: 0 10px;
+}
+.tbox.long {
+	width: 550px;
+}
+.tbox.full{
+	width:calc(100% - 20px);
+}
+.tbox.normal, 
+.textbox.normal {
+    width: 280px;
+}
+
+
+
+.section.storeSection {
+	padding : 0;
+}
+.section.goodsSection {
+	padding : 0;
+}
+
+.storeTitleBox {
+	width : 100%;
+	min-height : 4.167vw;
+	/* padding-bottom : 15%; */
+	overflow : hidden;
+	background-color: #ef5b5c;
+
+	-webkit-backface-visibility: hidden;
+	-moz-backface-visibility: hidden;
+	-webkit-transform: translate3d(0, 0, 0);
+	-moz-transform: translate3d(0, 0, 0);
+
+}
+.storeTitleBox.goodsSect {
+	border-radius : 0;
+	background-color : #fff;
+	min-height : 19.444vw;
+}
+.storeTitleBox.textOnly {
+	margin-bottom : 15%;
+	padding-bottom : 20px;
+}
+
+.storeTitleBox.textOnly .storeName {
+	color : #fb6d3a;
+	font-weight: 700;
+    font-size: 20px;
+}
+.storeTitleBox.textOnly .storeName div {
+	display : inline-block;
+}
+.storeTitleBox.textOnly .storeName .localStore {
+	font-size: 15px;
+    padding-left: 7px;
+}
+
+.storeTitleBox img {
+	width : 100%;
+}
+
+.storeTitleBox .sliderImgSingle {
+	position : relative;
+	/* padding-top : 63.8%; */
+	overflow : hidden;
+	width : 100vw;
+	height : 63.778vw;
+	max-height : 287px;
+}
+.storeTitleBox .sliderImgSingle img {
+	/* position : absolute; */
+	position : initial;
+	top : 0;
+	left : 0;
+	width : 100%;
+	height : 100%;
+}
+
+
+.storeInfoBox {
+	position : relative;
+	background-color : #ef5b5c;
+	width : 100%;
+	margin-top : -5%;
+	border-radius : 20px;
+	box-shadow : 13px 13px 8px -8px rgb(86, 86, 86, 0.09);
+}
+.storeInfoBox .upperInfo {
+	padding : 25px 0 20px 0;
+	/* border-bottom : 1px solid #fb6d3a; */
+}
+.storeInfoBox.goodsSect {
+	text-align : center;
+	width : calc(100% - 40px);
+	padding : 0 20px;
+	background-color : #fff;
+	border-radius : 10px 10px 0 0;
+	border-bottom : 1px solid #eeeeee;
+}
+.storeInfoBox.goodsSect .lowerInfo {
+	padding : 0 0 20px 0;
+	letter-spacing : -1.2px;
+}
+
+.storeInfoBox.goodsSect .goodsName {
+	color : #000;
+	font-size : 25px;
+}
+.storeInfoBox.goodsSect .upperInfo {
+	padding : 25px 0 10px 0;
+}
+.storeInfoBox .upperInfo .leftBox {
+	width : 110px;
+	display : inline-block;
+	vertical-align : middle;
+}
+.storeInfoBox .upperInfo .rightBox {
+	width : calc(100% - 114px);
+	display : inline-block;
+	vertical-align : middle;
+}
+.storeInfoBox .upperInfo .rightBox .storeAddress {
+	margin-top : 0;
+}
+.storeInfoBox .upperInfo .rightBox .storeAddress .addressIcon {
+	padding-right : 6px;
+}
+.storeInfoBox .upperInfo .rightBox .infoBox {
+	padding-top : 10px;
+	line-height: 13px;
+}
+.storeInfoBox .upperInfo .rightBox .infoBox div {
+	display: inline-block;
+    font-size: 13px;
+    /* line-height: 13px; */
+}
+.storeInfoBox .upperInfo .rightBox .infoBox .infoIcon {
+	width : 12px;
+	height : 12px;
+}
+.storeInfoBox .rightBox .storeAddress .addressText {
+	width : calc(100% - 22px);
+}
+
+.storeInfoBox .storeName {
+	color : #fff;
+	font-weight : 700;
+	font-size : 25px;
+	text-align : center;
+}
+.storeInfoBox .goodsName {
+	color : #fb6d3a;
+	font-weight : 700;
+	font-size : 20px;
+}
+.storeInfoBox .storeName div {
+	/* font-family : 'Spoqa Han Sans'; */
+
+}
+
+.storeInfoBox .storeName div {
+	display : inline-block;
+}
+.storeInfoBox .storeName .localStore {
+	font-size : 15px;
+	padding-left : 7px;
+}
+
+.storeInfoBox .storeTelephone {
+	padding-top : 15px;
+	font-size : 12px;
+}
+.storeInfoBox .noticeHoliday {
+	font-size : 14px;
+	line-height : 28px;
+}
+
+.storeInfoBox .storeAddress {
+	margin-top : 16px;
+}
+.storeInfoBox .storeAddress div {
+	display : inline-block;
+	vertical-align : top;
+}
+.storeInfoBox .storeAddress .addressIcon {
+	width : 12px;
+	height : 14px;
+	padding-right : 6px;
+}
+.addressIcon img {
+	width : 100%;
+	height : 100%;
+}
+.storeInfoBox .storeAddress .addressText {
+	font-size : 13px;
+	line-height : 13px;
+	width : calc(100% - 22px);
+}
+.storeInfoBox .lowerInfo {
+	padding : 0 20px 70px 20px;
+	font-size : 0;
+	/* border-top : 1px solid #fb6d3a; */
+}
+.storeInfoBox .lowerInfo .infoBox {
+	/* width : calc(33.33% - 3px); */
+	display : block;
+	padding-bottom : 2.5px;
+	
+}
+.lowerInfo .infoBox div {
+	display : inline-block;
+	vertical-align : top;
+	font-size : 12px;
+	line-height : 12px;
+	font-weight : 200;
+}
+.storeInfoBox .lowerInfo .infoBox span.infoTitle {
+	padding-right : 9.5px;
+}
+/* .lowerInfo .infoBox.rating {
+	text-align : left;
+} */
+.lowerInfo .infoBox.rating .ratingCount {
+	color : #b5b5b5;
+}
+.storeInfoBox .lowerInfo .infoBox + .infoBox {
+	padding-top : 5px;
+}
+
+.storeInfoBox .upperInfo .storeRateGroup {
+	display : block;
+	font-size : 0;
+	margin-top : 10px;
+}
+
+.storeInfoBox .upperInfo .storeRateGroup .ratingStar {
+	width : 25px;
+	height : 25px;
+	background : url(/common/img/ratingStarOff.png) no-repeat center / cover;
+	vertical-align : middle;
+
+}
+.storeInfoBox .upperInfo .storeRateGroup .ratingStar + .ratingStar {
+	margin-left : 5px;
+}
+.storeInfoBox .upperInfo .storeRateGroup .ratingStar.activated {
+	width : 25px;
+	height : 25px;
+	background : url(/common/img/ratingStarOn.png) no-repeat center / cover;
+}
+.storeInfoBox .upperInfo .storeRateGroup .rateDisplay {
+	margin-left : 10px;
+	font-size : 25px;
+	vertical-align : middle;
+}
+
+
+/* .lowerInfo .infoBox.price {
+	text-align : center;
+} */
+/* .lowerInfo .infoBox.delTime {
+	text-align : right;
+} */
+.infoBox .infoIcon {
+	padding-right : 6px;
+	width : 10px;
+	height : 10px;
+}
+.infoBox .infoIcon img {
+	width : 100%;
+	height : 100%;
+}
+
+.floatCartBox {
+	position : fixed;
+	width : calc(100% - 40px);
+	padding : 0 20px;
+	max-width : 410px;
+	bottom : 64px;
+	text-align : right;
+	pointer-events:none;
+	z-index : 100;
+}
+.fixedCart {
+	width : 70px;
+	height : 70px;
+	display : inline-block;
+	border-radius : 50%;
+	background-color : #fb6d3a;
+	pointer-events:auto;
+}
+.fixedCart img {
+	/* width : 26px;
+	height : 26px;
+	padding : 15.5px; */
+	width : 100%;
+	height : 100%;
+}
+
+.fixedCart .cartBtn {
+	position : relative;
+	display : block;
+}
+.fixedCart .pickedNum {
+	position : absolute;
+	top : -10px;
+	right : 0;
+	width : 28px;
+	height : 28px;
+	border-radius : 50%;
+	background-color : #000;
+	color : #fff;
+	font-size : 14px;
+	text-align : center;
+	line-height : 28px;
+}
+
+/* 장바구니 아이콘 크기 제한 파트 open */
+/* @media (min-width : 721px){
+	.fixedCart {
+		width : 140px;
+		height : 140px;
+		bottom : 128px;
+		right : 40px;
+	}
+	.fixedCart .pickedNum {
+		top : -20px;
+		width : 56px;
+		height : 56px;
+		font-size : 28px;
+		text-align : center;
+		line-height : 56px;
+	}
+} */
+/* 장바구니 아이콘 크기 제한 파트 close */
+
+
+.section.subMenus {
+	display : block;
+	margin-top : -53px;
+	background-color : #fff;
+	border-radius : 20px 20px 0 0;
+	padding : 0;
+}
+.section.subMenus .listTab {
+	/* margin : 20px 0 15px 0; */
+	padding : 20px 0 15px 0;
+	font-size : 0;
+	border-bottom : 1px solid #eeeeee;
+}
+.section.subMenus .listTab ul li {
+	display : inline-block;
+	/* width : 33.33%; */
+    /* width : 25%; */
+    width : 20%;
+	/* font-size : 18px; */
+	font-size : 15px;
+	font-weight : 200;
+	text-align : center;
+	color : #000;
+	position : relative;
+}
+.section.subMenus .listTab ul li a {
+	/* font-family : 'Spoqa Han Sans'; */
+}
+.section.subMenus .listTab ul li:first-child {
+	text-align : center;
+}
+
+.section.subMenus .listTab ul li:last-child {
+	text-align : center;
+}
+.section.subMenus .listTab ul li.selected {
+	color : #EF5B5C;
+}
+.section.subMenus .listTab ul li.selected:after {
+	content : "";
+	position : absolute;
+	bottom : -15px;
+	left : 0;
+	right : auto;
+	background-color : #EF5B5C;
+	width : 100%;
+    height : 3px;
+    font-weight:600;
+}
+.section.subMenus .listTab ul li:first-child.selected:after {
+	content : "";
+	position : absolute;
+	bottom : -15px;
+	left : 0;
+	right : auto;
+	background-color : #EF5B5C;
+	width : 100%;
+    height : 3px;
+    font-weight:600;
+}
+.section.subMenus .listTab ul li:last-child.selected:after {
+	content : "";
+	position : absolute;
+	bottom : -15px;
+	right : 0;
+	left : auto;
+	background-color : #EF5B5C;
+	width : 100%;
+    height : 3px;
+    font-weight:600;
+}
+.section.subMenus .subMenuCon {
+	padding : 0;
+}
+.section.subMenus .subMenuCon ul li {
+	position : relative;
+	border-bottom : solid 1px #eeeeee; 
+	padding : 14px 20px;
+	min-height : 32px;
+	font-size : 0;
+}
+.section.subMenus .subMenuCon ul li a {
+	position : absolute;
+	width : 100%;
+	height : 100%;
+	top : 0;
+	left : 0;
+}
+.section.subMenus .subMenuCon ul li:last-child {
+	margin-bottom : 0;
+}
+.section.subMenus .subMenuCon .itemMenuGroup .imgBox {
+	width : 110px;
+	height : 80px;
+	display : inline-block;
+	vertical-align : middle;
+	/* margin-right : 20px; */
+	overflow : hidden;
+}
+.imgBox img {
+	/* width : 100%; */
+	height : 100%;
+}
+.section.subMenus .subMenuCon .itemMenuGroup .infoBox {
+	width : calc(100% - 125px);
+	margin-right : 15px;
+	display : inline-block;
+	vertical-align : middle;
+}
+.itemMenuGroup .infoBox .itemTitle {
+	margin-bottom : 6px;
+}
+.itemMenuGroup .infoBox .itemTitle, 
+.itemMenuGroup .infoBox .itemPrice {
+	font-size : 14px;
+	font-weight : 600;
+	/* font-family : 'Noto Sans KR'; */
+}
+.itemMenuGroup .infoBox .itemSpec {
+	font-size : 12px;
+	line-height : 16px;
+	min-height : 12px;
+	margin-bottom : 8px;
+	text-overflow : ellipsis;
+	overflow : hidden;
+	/* white-space : pre-wrap; */
+	display: -webkit-box;
+	-webkit-line-clamp: 2;
+	-webkit-box-orient: vertical;
+	/* font-family : 'Noto Sans KR'; */
+	font-weight : 200;
+}
+
+/* ksg_20201006_1524 open  */
+.itemMenuGroup .menuSubTitle {
+	padding : 17px 20px;
+	font-size: 14px;
+	font-weight: 400;
+	cursor : pointer;
+	position : relative;
+	background-color : #eeeeee;
+}
+.itemMenuGroup .menuSubTitle.deactivated:before {
+	background : url(/common/img/iconMenuDown.png) no-repeat center / cover;
+}
+.itemMenuGroup .menuSubTitle:before {
+	content : "";
+	position : absolute;
+	top : 22px;
+	right : 20px;
+	width : 10px;
+	height : 5px;
+	background : url(/common/img/iconMenuUp.png) no-repeat center / cover;
+}
+ul + .menuSubTitle {
+	/* margin-top : 30px; */
+	padding-top : 15px;
+	/* border-top : 1px solid #b5b5b5; */
+}
+/* ksg_20201006_1524 close  */
+
+.btnBox.shopOrderBtn {
+	width : 100%;
+	height : 60px;
+	background-color : #ef5b5c;
+	position : fixed;
+	bottom : 0;
+	/* border-radius : 5px 5px 0 0; */
+	/* max-width : 720px; */
+	max-width : 450px;
+	z-index : 10;
+	overflow : hidden;
+}
+.btnBox.shopOrderBtn a {
+	line-height : 60px;
+	width : 100%;
+	height : 100%;
+	text-align : center;
+	display : block;
+	font-size : 20px;
+	color : #fff;
+	font-weight : 700;
+}
+.btnBox.shopOrderBtn a.orderPrice {
+	display : none;
+	background-color : #ffb69c;
+}
+.btnBox.shopOrderBtn a.btnHalf {
+	width : calc(50% - 3px);
+	display : inline-block;
+}
+
+.section.goodsQTY {
+	/* text-align : right; */
+	border-top : 1px solid #eeeeee;
+	padding : 11px 20px 12px 20px;
+}
+/* .section.goodsQTY:before {
+	content : "";
+	position : absolute;
+	top : 0;
+	left : 22px;
+	width : calc(100% - 44px);
+	border-top : 1px solid #fb6d3a;
+} */
+
+.section.goodsQTY .title {
+	display : inline-block;
+	font-size : 14px;
+	font-weight : 600;
+	height : 30px;
+	line-height : 30px;
+}
+
+.section.goodsQTY .btnGroup {
+	float : right;
+	padding-left : 20px;
+	display : inline-block;
+	margin-top : 0;
+}
+.section.goodsQTY .btnGroup .countBtnGroup {
+	float : initial;
+}
+
+.subMenuCon .subSection.reviewGroup ul.reviewList li.infoEmpty {
+	width : auto;
+	height : auto;
+	text-align : center;
+	padding : 80px 0 20px 0;
+	font-size : 15px;
+	min-height : auto;
+	border : none;
+}
+.infoEmpty {
+	width : auto;
+	height : auto;
+	text-align : center;
+	padding : 80px 0 20px 0;
+	font-size : 15px;
+	min-height : auto;
+	border : none;
+}
+.section.subMenus .subMenuCon .subSection.pastOrderGroup ul li.infoEmpty {
+	width : auto;
+	height : auto;
+	text-align : center;
+	padding : 80px 0 20px 0;
+	font-size : 15px;
+	min-height : auto;
+	border : none;
+}
+.subMenuCon .subSection.reviewGroup {
+	padding : 0 20px;
+}
+.subMenuCon .subSection.reviewGroup .reviewCounter {
+	font-size : 14px;
+	padding : 12px 0;
+	border-bottom : solid 1px #eeeeee;
+	font-weight : 600;
+}
+.subMenuCon .subSection.reviewGroup,
+.subMenuCon .subSection.storeInfoGroup,
+.subMenuCon .subSection.pastOrderGroup {
+	display : none;
+}
+
+.subMenuCon .subSection.reviewGroup ul.reviewList li {
+	padding : 13px 0;
+	font-size : 14px;
+}
+.subSection.reviewGroup ul.reviewList li .reviewRateBox {
+    display: block;
+	font-size: 0;
+	margin-bottom : 10px;
+}
+.subSection.reviewGroup ul.reviewList li .reviewRateBox .ratingStar {
+    width: 16px;
+    height: 16px;
+    background: url(/common/img/ratingStarOff_grey.png) no-repeat center / cover;
+    vertical-align: middle;
+}
+.subSection.reviewGroup ul.reviewList li .reviewRateBox .ratingStar.activated {
+    width: 16px;
+    height: 16px;
+    background: url(/common/img/ratingStarOn.png) no-repeat center / cover;
+}
+.subSection.reviewGroup ul.reviewList li .reviewRateBox .ratingStar + .ratingStar {
+    margin-left: 4px;
+}
+.subSection.storeInfoGroup .infoCase {
+	border-radius: 10px;
+	width: auto;
+    height: auto;
+    text-align: left;
+    padding: 20px;
+    font-size: 0;
+}
+.infoCase .infoPart {
+	padding-bottom : 30px;
+}
+.infoCase .infoPart:last-child {
+	border-bottom : none;
+	padding-bottom : 0;
+	margin-bottom : 0;
+}
+.infoCase .infoPart .title {
+	font-size : 14px;
+	font-weight : 600;
+	padding-bottom : 10px;
+}
+.infoCase .infoPart .infoText {
+    font-size : 14px;
+    font-weight:200;
+	line-height : 15px;
+}
+.infoCase .infoPart .infoText .infoType {
+	width : 110px;
+	display : inline-block;
+    vertical-align : top;
+    padding-bottom:10px;
+}
+.infoCase .infoPart .infoText .infoStat {
+    display : inline-block;
+    font-weight:200;
+	width : calc(100% - 115px);
+	vertical-align : top;
+}
+.infoCase .infoPart .infoText .infoInnerCase + .infoInnerCase {
+	/* margin-top : 10px; */
+}
+
+
+
+.orderSlide {
+	display : none;
+	position : fixed;
+	bottom : 0;
+	padding : 22px 22px 65px 22px;
+	width : calc(100% - 44px);
+	height : auto;
+	min-height : 100px;
+	background-color : #fff;
+	overflow-y : scroll;
+	z-index : 10;
+	border-radius  : 10px 10px 0 0;
+}
+.orderSlide .itemTitleBox {
+	position : relative;
+	padding-bottom : 20px;
+	margin-bottom : 20px;
+	border-bottom : 1px solid #fb6d3a;
+}
+.orderSlide a.closeBtn {
+	position : absolute;
+	bottom : 15px;
+	right : 0;
+	width : 30px;
+	height : 30px;
+}
+.orderSlide a.closeBtn img {
+	width : 100%;
+	height : 100%;
+}
+.orderSlide .itemTitleBox .titleText {
+	font-size : 20px;
+	font-weight : 600;
+}
+.itemOptionBox .selectionGroup .optionTitle {
+	font-size : 14px;
+	font-weight : 600;
+}
+.itemOptionBox .selectionGroup ul li {
+	margin-top : 10px;
+	height : 23px;
+	position : relative;
+	display : block;
+}
+.itemOptionBox .selectionGroup ul li div {
+	display : inline-block;
+	vertical-align : middle;
+	font-size : 14px;
+}
+.itemOptionBox .selectionGroup ul li div.checkboxGroup {
+	padding-right : 5px;
+}
+.itemOptionBox .selectionGroup ul li div.optionPrice {
+	position : absolute;
+	top : 2px;
+	right : 0;
+}
+.itemOptionBox .selectionGroup + .selectionGroup {
+	margin-top : 15px;
+	padding-top : 15px;
+	border-top : 1px solid #b5b5b5;
+}
+
+/* ksg_20200102_1601 open  */
+.optionMenus {
+	padding : 13px 0 25px 0;
+	width : 100%;
+	height : auto;
+	min-height : 100px;
+	background-color : #fff;
+	overflow-y : scroll;
+	z-index : 10;
+	border-radius  : 10px 10px 0 0;
+}
+.optionMenus .itemTitleBox {
+	position : relative;
+	padding-bottom : 15px;
+	margin-bottom : 15px;
+	border-bottom : 1px solid #b5b5b5;
+}
+.optionMenus .itemTitleBox .titleText {
+	font-size : 15px;
+	font-weight : 600;
+}
+.optionMenus .itemTitleBox .titlePrice {
+	float : right;
+}
+/* ksg_20200102_1601 close  */
+
+/* ksg_20200102_1840 open  */
+.cartItemBox {
+	padding-top: 13px;
+    width: 100%;
+}
+.cartItemBox li {
+	position: relative;
+    padding-bottom: 15px;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #eeeeee;
+}
+.cartItemBox li:last-child {
+	border-bottom : none;
+}
+.cartItemBox li .itemTitle {
+	font-size: 15px;
+	font-weight: 600;
+	padding-bottom : 7px;
+}
+.cartItemBox li .itemInfo {
+	font-size : 12px;
+	color : #828282;
+}
+.cartItemBox li .itemInfo .chosenOptions + .chosenOptions {
+	margin-top : 6px;
+}
+.btnGroup {
+	margin-top : 11px;
+	font-size : 0;
+	height : 30px;
+}
+.btnGroup .deleteBtn {
+	border : 1px solid #fb6d3a;
+	border-radius : 4px;
+	padding : 7px 19px;
+	font-size : 13px;
+	color : #fb6d3a;
+	float : left;
+}
+.btnGroup .countBtnGroup {
+	float : right;
+	border : 1px solid #fb6d3a;
+	border-radius : 4px;
+	height : 28px;
+	font-size : 0;
+}
+.countBtnGroup a {
+	font-size : 14px;
+	line-height : 28px;
+	padding : 0 9.5px;
+}
+.countBtnGroup span input {
+	font-size : 14px;
+	width : 25px;
+	border : none;
+	height : 28px;
+	vertical-align : top;
+	text-align : center;
+	color : #fb6d3a;
+}
+.priceInfoGroup {
+	font-size : 12px;
+}
+.priceInfoGroup div {
+	position : relative;
+	display : block;
+	min-height : 12px;
+}
+.priceInfoGroup div + div {
+	margin-top : 10px;
+}
+.priceInfoGroup div span {
+	position : absolute;
+}
+.priceInfoGroup div span:first-child {
+	left : 0;
+	top : 0;
+}
+.priceInfoGroup div span:last-child {
+	right : 0;
+	top : 0;
+}
+.priceInfoGroup .totalPrice {
+	padding-top : 14px;
+	/* color : #fb6d3a; */
+	font-weight : 600;
+	font-size : 13px;
+}
+/* ksg_20200102_1840 close  */
+
+/* ksg_20200103_1037 open  */
+.section.orderSect {
+    /* padding-top: 55px;
+	padding-bottom: 25px; */
+	padding : 55px 0 15px 0;
+}
+.section.orderSect .orderInfo {
+	/* padding : 13px 20px 0 20px; */
+	padding : 20px 20px 0 20px;
+	width: calc(100% - 40px);
+	position : relative;
+	border-bottom: 1px solid #eeeeee;
+}
+.orderInfo .infoTitle {
+	font-size: 14px;
+    font-weight: 600;
+    /* padding-bottom: 28px; */
+}
+.changeBtn.address {
+	position : absolute;
+	top : 55px;
+	right : 25px;
+	border : 1px solid #ef5b5c;
+	color : #ef5b5c;
+	padding : 11px;
+	font-size : 14px;
+	font-weight : 600;
+	/* border-radius : 4px; */
+}
+.section.orderSect .orderInfo.address .roadAddress {
+	font-size : 12px;
+	/* padding-top : 15px; */
+	/* padding-bottom : 15px; */
+	/* margin-bottom : 15px; */
+	/* border-bottom : 1px solid #b5b5b5; */
+}
+.roadAddress .addressBox {
+	/* border-bottom : 1px solid #ccc; */
+	/* padding : 15px 0 10px 0; */
+	padding-bottom : 10px;
+}
+.roadAddress .addressBox + .addressBox  {
+	border-bottom : none;
+}
+
+.roadAddress .addressBox input {
+	display: block;
+    height: 48px;
+    /* margin-bottom: 10px; */
+	font-size: 14px;
+	width : calc(100% - 34px);
+	padding : 0 16px;
+	/* border : none; */
+	font-weight : 600;
+	border-radius : 3px;
+}
+
+
+
+.section.orderSect .orderInfo.address .customInfo {
+	padding-bottom : 10px;
+	/* border-bottom : 1px solid #fb6d3a; */
+}
+.customInfo input.tbox {
+	display : block;
+	width : calc(100% - 34px);
+	height : 48px;
+	margin-bottom : 10px;
+	font-size : 14px;
+	border-radius : 3px;
+	padding : 0 16px;
+}
+.section.orderSect .orderInfo.takeMethod,
+.section.orderSect .orderInfo.request,
+.section.orderSect .orderInfo.payment,
+.section.orderSect .orderInfo.charge {
+	padding-top : 20px;
+	padding-bottom : 20px;
+	/* border-bottom : 1px solid #fb6d3a; */
+}
+.orderInfo.request .infoTitle,
+.orderInfo.payment .infoTitle,
+.orderInfo.charge .infoTitle  {
+	padding-bottom : 20px;
+}
+
+.orderInfo.request .confirmBtn {
+    position: absolute;
+    top: 60px;
+    right: 25px;
+    border: 1px solid #ef5b5c;
+    color: #ef5b5c;
+    padding: 11px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+
+
+.orderInfo.request .disposalCheck {
+	position : relative;
+	font-size : 0;
+}
+.orderInfo.request .disposalCheck div + div {
+	padding-left : 10px;
+}
+.orderInfo.payment .payTypeCheck {
+	margin-bottom : 15px;
+	position : relative;
+}
+
+.orderInfo.request .disposalCheck div,
+.orderInfo.payment .payTypeCheck div {
+	display : inline-block;
+	vertical-align : middle;
+	font-size : 14px;
+}
+
+.orderInfo.payment .payTypeGroup .sbox.hide {
+	display : none;
+}
+
+.disposalCheck .checkboxGroup,
+.payTypeCheck .checkboxGroup {
+	padding-right : 10px;
+}
+.sbox {
+	display: block;
+    height: 50px;
+	border: 1px solid #fb6d3a;
+    background-color: #fff;
+	color: #3b3b3b;
+	position : relative;
+}
+.sbox a.selectBtn {
+	font-size : 15px;
+	font-weight : 600;
+	display : block;
+	padding : 18px 21px;
+}
+.sbox a.selectBtn:before {
+	content : "▼";
+	color : #fb6d3a;
+	position : absolute;
+	top : 17px;
+	right : 21px;
+}
+.sbox ul {
+	display : none;
+	position : absolute;
+	top : 50px;
+	left : -1px;
+	border : 1px solid #fb6d3a;
+	background-color : #fff;
+	width : 100%;
+	z-index : 5;
+}
+.sbox ul li {
+	font-size : 15px;
+}
+.sbox ul li:hover {
+	background-color : #ffb69c;
+	color : #fff;
+}
+.sbox ul li a {
+	display : block;
+	width : calc(100% - 42px);
+	height : 100%;
+	padding : 18px 21px;
+}
+.payMethod li.payTypeGroup {
+	/* padding-bottom : 15px; */
+	/* border-bottom : 1px solid #b5b5b5; */
+	margin-bottom : 20px;
+}
+.payMethod li.payTypeGroup:last-child {
+	padding-bottom : 0;
+	border-bottom : none;
+	margin-bottom : 0;
+}
+.payMethod li.payTypeGroup:last-child .payTypeCheck {
+	margin-bottom : 0;
+}
+/* .payMethod input[type="radio"]:checked + label {
+	display : block;
+	width : 23px;
+	height : 23px;
+	background : url("/common/img/radio_on.png") no-repeat center / 100%;
+}
+.payMethod input[type="radio"]:not(:checked) + label {
+	display : block;
+	width : 23px;
+	height : 23px;
+	background : url("/common/img/radio_off.png") no-repeat center / 100%;
+} */
+.section.orderSect .orderInfo.charge {
+	border-bottom : none;
+	margin-bottom : 0;
+	padding-bottom : 0;
+}
+.orderInfo.charge .chargeItemInfo {
+	padding-bottom: 15px;
+    border-bottom: 1px solid #eeeeee;
+    margin-bottom: 15px;
+}
+.chargeItemInfo div {
+	position : relative;
+	display : block;
+	min-height : 15px;
+}
+.chargeItemInfo div + div {
+	margin-top : 10px;
+}
+.chargeItemInfo div span.goodsName {
+	/* position : absolute; */
+	left : 0;
+	top : 0;
+	font-size : 14px;
+	font-weight : 600;
+	max-width : 220px;
+	display : block;
+}
+.chargeItemInfo div span.goodsPrice {
+	position : absolute;
+	right : 0;
+	top : 0;
+	font-size : 16px;
+	font-weight : 600;
+}
+
+
+.chargeItemInfo div .goodsOptions {
+	padding : 7px 15px 0 0;
+	font-size: 12px;
+    /* color: #828282; */
+}
+.chargeItemInfo div .goodsOptions div + div {
+	margin-top : 2px;
+}
+
+
+.orderInfo.charge .priceInfoGroup .annexPrice div {
+	height : 15px;
+	border-bottom : 1px solid #eeeeee;
+	padding-bottom : 15px;
+}
+
+.orderInfo.charge .priceInfoGroup .annexPrice + .totalPrice {
+	margin-top : 15px;
+}
+
+
+.orderInfo.charge .priceInfoGroup div span:first-child {
+	font-size : 16px;
+	font-weight : 600;
+}
+.orderInfo.charge .priceInfoGroup div span:last-child {
+	font-size : 16px;
+	font-weight : 600;
+}
+.orderInfo.charge .priceInfoGroup .totalPrice {
+	padding-top : 0;
+}
+.orderInfo.charge .priceInfoGroup .totalPrice div {
+	height : 17.5px;
+}
+.orderInfo.charge .priceInfoGroup .totalPrice div span:last-child {
+	font-size : 20px;
+	color : #ef5b5c;
+}
+.orderInfo.charge .priceInfoGroup .couponPriceBox {
+	padding-bottom : 15px;
+	border-bottom: 1px solid #eeeeee;
+}
+.couponPriceBox.hide {
+	display : none;
+}
+
+.section.noticeSect {
+	width : calc(100% - 44px);
+	background-color : #f7f7f7;
+	padding : 20px 22px 27.5px 22px;
+}
+/* .section.noticeSect .prescriptGroup {
+	padding-bottom : 27.5px;
+} */
+.prescriptGroup .prescriptCon {
+	padding-bottom : 15px;
+	border-bottom : 1px solid #b5b5b5;
+	margin-bottom : 15px;
+}
+/* .prescriptGroup .prescriptCon:last-child {
+	padding-bottom : 0;
+	border-bottom : none;
+	margin-bottom : 0;
+} */
+.prescriptGroup .prescriptCon .title {
+	position : relative;
+	font-size : 15px;
+	/* color : #9f9f9f; */
+	width : 100%;
+}
+.prescriptGroup .prescriptCon .title:before {
+	content : "▼";
+	color : #000;
+	position : absolute;
+	top : 0;
+	right : 0;
+	font-size : 11px;
+}
+
+.prescriptGroup .prescriptCon .title.activated:before {
+	content : "▲";
+}
+
+.prescriptGroup .prescriptCon .title:hover {
+	cursor : pointer;
+}
+.prescriptGroup .prescriptCon .ruleText {
+	display : none;
+	padding-top : 10px;
+	font-size : 12px;
+}
+.section.noticeSect .acceptCheck {
+	position: relative;
+	font-size: 0;
+	text-align : center;
+}
+.section.noticeSect .acceptCheck div {
+	display: inline-block;
+    vertical-align: middle;
+	font-size: 13px;
+	/* color : #9f9f9f; */
+}
+.section.noticeSect .acceptCheck .checkboxGroup {
+	padding-right: 10px;
+}
+/* ksg_20200103_1037 close  */
+
+/* ksg_20200129_2113 open  */
+.section.finishSect {
+	/* padding: 80px 22px 25px 22px; */
+	padding : 80px 0 25px 0;
+	text-align : center;
+}
+.section.finishSect .finishIcon {
+	width : 35.5px;
+	height : 35.5px;
+	padding-bottom : 15.5px;
+}
+.section.finishSect .title {
+	font-size : 18px;
+	font-weight : 600;
+	padding-bottom : 25px;
+}
+.section.finishSect .infoText {
+	font-size : 12px;
+	line-height : 16px;
+}
+
+
+
+.section.orderListSect {
+	padding : 55px 0 25px 0;
+}
+.orderListBox {
+    padding-top: 16px;
+    width: 100%;
+}
+.orderListBox li {
+    position: relative;
+    padding-bottom: 15px;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #eeeeee;
+}
+.orderListBox li .orderInfoGroup {
+	padding : 0 22px;
+}
+.orderListBox li .itemTitle {
+    font-size: 16px;
+    font-weight: 600;
+    padding-bottom: 10px;
+}
+.orderListBox li .itemInfo {
+    font-size: 13px;
+    color: #000;
+}
+.orderListBox li .itemInfo .chosenOptions + .chosenOptions {
+    margin-top: 6px;
+}
+.orderListBox li .orderSpecLink {
+	position: absolute;
+    left: 0;
+    top: -15px;
+    width: 100%;
+    height: calc(100% + 15px);
+}
+.orderListBox li .orderSpecLink img {
+	position : absolute;
+	right : 22px;
+	top : 50%;
+	-webkit-transform : translateY(-50%);
+	transform : translateY(-50%);
+	width : 9px;
+	height : 18px;
+}
+.orderListBox li .orderTime {
+	color : #828282;
+	font-size : 13px;
+	padding-bottom : 14px;
+}
+
+
+
+.section.orderSpecSect {
+	padding : 55px 22px 25px 22px;
+}
+.orderListBox.specBoxType {
+	padding-top : 35px;
+	text-align : left;
+}
+.orderListBox.specBoxType li {
+    padding-bottom: 20px;
+}
+.orderListBox.specBoxType li .orderInfoGroup {
+	padding : 0;
+}
+.orderListBox.specBoxType li .orderTime {
+    color: #000;
+    font-size: 13px;
+    padding-bottom: 10px;
+}
+.orderListBox.specBoxType .btnGroup {
+	margin-top : 0;
+}
+
+.orderListBox.specBoxType .itemInfo + .btnGroup {
+	margin-top : 10px;
+}
+
+.btnGroup .reOrderBtn {
+    border: 1px solid #fb6d3a;
+    border-radius: 4px;
+    padding: 7px 19px;
+    font-size: 13px;
+    color: #fb6d3a;
+    float: left;
+}
+.btnGroup .deleteBtn.absoluteType {
+	position : absolute;
+	right : 0;
+	top : 0;
+}
+
+.finishSect .priceInfoGroup {
+	/* border-bottom: 1px solid #b5b5b5; */
+	padding-bottom : 23px;
+	margin-bottom : 21px;
+}
+.finishSect .priceInfoGroup .totalPrice div span:first-child {
+	/* top : 2px; */
+	top : 50%;
+	transform : translateY(-50%);
+	-webkit-transform : translateY(-50%);
+}
+.finishSect .priceInfoGroup .totalPrice div span:last-child {
+	font-size : 18px;
+}
+.finishSect .priceInfoGroup .totalPrice div {
+	min-height : 18px;
+}
+.finishSect .priceInfoGroup .totalPrice div + div {
+    margin-top: 12px;
+}
+.finishSect .orderInfo .infoTitle {
+    font-size: 14px;
+    font-weight: initial;
+	padding-bottom: 10px;
+	font-weight : 600;
+}
+.finishSect .orderInfo .infoText {
+	font-size : 14px;
+	/* color : #828282; */
+}
+
+.orderInfo.address {
+	text-align : left;
+}
+.orderInfo.address .infoTitle {
+	padding-bottom : 15px;
+}
+.finishSect .orderInfo.address .infoText div + div {
+	margin-top : 4px;
+}
+.finishSect .orderInfo + .orderInfo {
+	margin-top : 30px;
+	text-align : left;
+}
+.orderListBox.specBoxType li .itemInfo {
+    font-size: 13px;
+	color: #828282;
+}
+/* ksg_20200129_2113 close  */
+
+
+.tipBox {
+	font-size : 10px;
+	color : #ababab;
+	padding : 13px 20px 0 20px;
+}
+
+
+
+/* :: 리뉴얼1 메인 페이지 파트 open */
+.popup.infoDisplaySort {
+	text-align : center;
+}
+.popup.infoDisplaySort a {
+	padding : 17px 34px;
+	font-size : 15px;
+	font-weight : 600;
+	border-radius: 5px;
+	color : #fff;
+	background-color: rgba(0, 0, 0, 0.8);
+}
+
+.reviewList .reviewImgBox {
+	width:  100%;
+    height: 50vw;
+    overflow: hidden;
+    margin-bottom: 10px;
+}
+.reviewList .reviewImgBox img {
+	width :  100%;
+}
+
+/* :: 리뉴얼1 메인 페이지 파트 close */
+
+
+/* :: 리뉴얼1 상품 상세 페이지 파트 open */
+.section.subMenus.goodsSect {
+	margin-top : 0;
+}
+.section.subMenus.goodsSect .optionMenus .itemTitleBox .titleText {
+	font-size : 14px;
+}
+.section.subMenus.goodsSect .optionMenus {
+	padding : 16px 0 0 0;
+	border-radius : 0;
+}
+.section.subMenus.goodsSect .optionMenus .itemTitleBox {
+	border-bottom : 1px solid #eeeeee;
+	padding : 0 20px 18px 20px;
+	margin-bottom : 0;
+}
+.section.subMenus.goodsSect .selectionGroup {
+	padding : 20px;
+}
+.section.subMenus.goodsSect .itemOptionBox .selectionGroup + .selectionGroup {
+	margin-top : 0;
+	border-top : 1px solid #eeeeee;
+}
+.essentialMark {
+	font-size : 12px;
+	color : #ef5b5c;
+	margin-left : 5px;
+	font-weight : 400;
+}
+.section.totalPriceSect {
+	padding : 20px 20px 40px 20px;
+	border-top : 1px solid #eeeeee;
+}
+.absoluteR {
+	position : absolute;
+	top : 0;
+	right : 0;
+}
+.section.totalPriceSect .titleText {
+	position : relative;
+	font-size : 14px;
+	line-height : 20px;
+}
+.fs20 {
+	font-size : 20px;
+}
+.section.totalPriceSect .minimumPriceGroup {
+	text-align : right;
+	font-size : 12px;
+	margin-top : 8px;
+}
+/* :: 리뉴얼1 상품 상세 페이지 파트 close */
+
+
+
+/* :: 리뉴얼1 주문하기 페이지 파트 open */
+.btnGroup.paySelectSort {
+	height : auto;
+	margin-top : 10px;
+	display : none;
+}
+.btnGroup.paySelectSort.activated {
+	display : block;
+}
+.btnGroup.paySelectSort .paySelectBtn {
+	width : calc(50% - 6px);
+	border : 1px solid #ef5b5c;
+	color : #ef5b5c;
+	display : inline-block;
+	font-size : 14px;
+	text-align : center;
+	line-height : 40px;
+	font-weight : 600;
+}
+.btnGroup.paySelectSort .paySelectBtn.activated {
+	background-color : #ef5b5c;
+	color : #fff;
+}
+.btnGroup.paySelectSort .paySelectBtn + .paySelectBtn {
+	margin-left : 8px;
+}
+/* :: 리뉴얼1 주문하기 페이지 파트 close */
+
+/* :: 리뉴얼1 장바구니 페이지 파트 open */
+.section.cartSect .btnGroup .countBtnGroup {
+	border : 1px solid #eeeeee;
+}
+.section.cartSect .btnGroup .countBtnGroup a {
+	font-weight : 600;
+	display : inline-block;
+	line-height : 28px;
+}
+.section.cartSect .btnGroup .countBtnGroup span input {
+	color : #000;
+	border-left : 1px solid #eeeeee;
+	border-right : 1px solid #eeeeee;
+}
+.section.cartSect .btnGroup .deleteBtn {
+	border : none;
+	font-size : 14px;
+	font-weight : 600;
+	color : #ef5b5c;
+	float : left;
+	padding : 8px 0;
+}
+.section.cartSect .priceInfoGroup {
+	font-size : 16px;
+	font-weight : 600;
+}
+.section.cartSect .priceInfoGroup .totalPrice {
+	padding-top : 15px;
+	margin-top : 15px;
+	border-top : 1px solid #eeeeee;
+	padding-bottom : 15px;
+	margin-bottom : 15px;
+	border-bottom : 1px solid #eeeeee;
+}
+.section.cartSect .priceInfoGroup div.totalPrice span:last-child {
+	font-size : 20px;
+	color : #ef5b5c;
+}
+.section.cartSect .moreItemBtn {
+	width : calc(100% - 20px);
+	margin : 0 auto;
+	line-height : 38px;
+	border : 1px solid #ef5b5c;
+	color : #ef5b5c;
+	font-size : 14px;
+	font-weight : 600;
+	display : block;
+	text-align : center;
+}
+/* :: 리뉴얼1 장바구니 페이지 파트 close */
+
+/* :: 리뉴얼1 주문완료 페이지 파트 open */
+.section.finishSect .orderTime {
+	text-align : left;
+	margin-top : 40px;
+	font-size : 14px;
+	margin-bottom : 8px;
+	padding : 0 20px;
+}
+.section.finishSect .orderListBox.specBoxType {
+	padding : 0 20px 0 20px;
+	width : calc(100% - 40px);
+}
+.section.finishSect .priceInfoGroup {
+	font-size : 16px;
+	padding : 0 20px 15px 20px;
+	border-bottom: 1px solid #eeeeee;
+	margin-bottom : 15px;
+}
+.section.finishSect .priceInfoGroup div span:last-child {
+	font-weight : 600;
+}
+.section.finishSect .priceInfoGroup div.annexPrice {
+	padding-bottom : 15px;
+	margin-bottom : 15px;
+	border-bottom : 1px solid #eeeeee;
+}
+.section.finishSect .priceInfoGroup .totalPrice {
+	margin-top : 0;
+	padding-top : 0;
+	font-size : 16px;
+	font-weight : 400;
+}
+.section.finishSect .priceInfoGroup .totalPrice div span:last-child {
+	font-size : 20px;
+	color : #ef5b5c;
+	position : initial;
+	width : 100%;
+	text-align : right;
+	display : block;
+	line-height : 22px;
+	
+}
+.section.finishSect .orderInfo.address {
+	padding : 0 20px;
+}
+.section.finishSect .orderInfo + .orderInfo {
+	padding : 0 20px;
+}
+.section.finishSect .orderInfo + .orderInfo {
+	padding : 0 20px;
+}
+.btnBox.shopOrderBtn a.orderPrice {
+	width : calc(50% - 5px);
+	height : calc(100% - 2px);
+	border: 1px solid #ef5b5c;
+	background-color : #fff;
+	color : #ef5b5c;
+}
+/* :: 리뉴얼1 주문완료 페이지 파트 close */
+
+
+/* :: 리뉴얼1 메인 페이지 푸터 파트 open */
+.section.footerSect {
+	margin : 14px 0 -60px 0;
+	background-color : #eeeeee;
+	font-size : 12px;
+	line-height : 15px;
+	padding : 14px 20px;
+	position : absolute;
+	bottom : 0;
+	width : calc(100% - 40px);
+}
+.section.footerSect .footerLogo {
+	position : absolute;
+	display : block;
+	top : 50%;
+	transform : translateY(-50%);
+	-webkit-transform : translateY(-50%);
+	right : 20px;
+	width : 72.5px;
+	height : 27.5px;
+	/* max-width : 145px;
+	max-height : 55px; */
+	background : url(/common/img/logo_pig.png) no-repeat center / cover;
+}
+/* @media(max-width:721px) {
+	.section.footerSect .footerLogo {
+		right : 5.556vw;
+	}
+} */
+/* :: 리뉴얼1 메인 페이지 푸터 파트 close */
+
+
+/* :: 리뉴얼1 메인 페이지 과거 주문내역 파트 open */
+.section.subMenus .subMenuCon .subSection.pastOrderGroup ul li {
+	padding : 0 0 14px 0;
+}
+/* :: 리뉴얼1 메인 페이지 과거 주문내역 파트 close */
+
+
+/* :: 리뉴얼1 과거 주문 상세 페이지 파트 open */
+.orderSpecSect .orderListBox li .itemInfo {
+    font-size: 13px;
+    color: #000;
+}
+.orderSpecSect .orderListBox li .itemInfo + .itemInfo  {
+    margin-top: 6px;
+}
+.orderSpecSect .priceInfoGroup {
+	font-size : 16px;
+}
+.orderSpecSect .priceInfoGroup div span:last-child {
+	font-weight : 600;
+}
+.orderSpecSect .totalPrice {
+	border-top : 1px solid #eeeeee;
+	border-bottom : 1px solid #eeeeee;
+	padding-bottom : 15px;
+	margin-bottom : 15px;
+
+}
+.section.orderSpecSect .priceInfoGroup .totalPrice div span:last-child {
+	font-size: 20px;
+    color: #ef5b5c;
+}
+.orderSpecSect .priceInfoGroup .totalPrice div + div {
+    margin-top: 12px;
+}
+.orderSpecSect .orderInfo .infoTitle {
+	padding-bottom : 10px;
+}
+.section.orderSpecSect .orderInfo + .orderInfo {
+	margin-top : 30px;
+}
+.orderSpecSect .orderInfo .infoText {
+	font-size : 14px;
+}
+.orderSpecSect .btnGroup .deleteBtn {
+	border : 1px solid #ef5b5c;
+	color : #ef5b5c;
+}
+.orderSpecSect .btnGroup .reOrderBtn {
+    border: 1px solid #ef5b5c;
+    color: #ef5b5c;
+}
+.orderSpecSect .orderListBox li {
+	border-bottom : none;
+	padding-bottom : 12px;
+	margin-bottom : 12px;
+}
+.orderSpecSect .btnGroup {
+	margin-bottom : 15px;
+	padding-bottom : 15px;
+	border-bottom: 1px solid #eeeeee;
+}
+.orderSpecSect .orderListBox.specBoxType {
+	padding-top : 0;
+}
+.orderSpecSect .orderHeadLine {
+	margin-top : 15px;
+	margin-bottom : 15px;
+	font-size : 13px;
+	position : relative;
+}
+.orderHeadLine .deleteBtn.absoluteType {
+	border : 1px solid #fb6d3a;
+	border-radius : 4px;
+	padding : 7px 19px;
+	font-size : 13px;
+	color : #fb6d3a;
+	float : left;
+	position : absolute;
+	right : 0;
+	top : 0;
+}
+/* :: 리뉴얼1 과거 주문 상세 페이지 파트 close */
+
+
+/* :: 리뉴얼 1 리뷰 작성 페이지 파트 open  */
+.section.reviewWriteSect {
+	/* padding: 80px 22px 25px 22px; */
+	padding : 80px 20px 25px 20px;
+	text-align : center;
+}
+.section.reviewWriteSect .title {
+	font-size : 20px;
+	font-weight : 600;
+	padding-bottom : 20px;
+}
+.section.reviewWriteSect .infoText .storeName {
+	font-size : 14px; 
+	padding-bottom : 10px;
+	font-weight : 600;
+}
+.section.reviewWriteSect .infoText .goodsName {
+	font-size : 14px;
+}
+.section.reviewWriteSect .storeRateGroup {
+	display : block;
+	font-size : 0;
+	margin-top : 20px;
+}
+
+.section.reviewWriteSect .storeRateGroup .ratingStar {
+	width : 35px;
+	height : 35px;
+	background : url(/common/img/ratingStarOff_grey.png) no-repeat center / cover;
+	vertical-align : middle;
+
+}
+.section.reviewWriteSect .storeRateGroup .ratingStar + .ratingStar {
+	margin-left : 10px;
+}
+.section.reviewWriteSect .storeRateGroup .ratingStar.activated {
+	width : 35px;
+	height : 35px;
+	background : url(/common/img/ratingStarOn.png) no-repeat center / cover;
+}
+.section.reviewWriteSect .witeReviewGroup {
+	margin-top : 30px;
+}
+.section.reviewWriteSect .witeReviewGroup textarea {
+	border : 1px solid #dddddd;
+	width : calc(100% - 32px);
+	height : 190px;
+	border-radius : 3px;
+	padding : 16px;
+	font-size : 14px;
+	resize : none;
+}
+.section.reviewWriteSect .witeReviewGroup textarea::placeholder {
+	color : #ababab;
+}
+
+.sizeFixImg {
+	text-align : left;
+	margin-top : 20px;
+}
+.imgUploadBox {
+    display: inline-block;
+    vertical-align: top;
+	border: 1px solid #dddddd;
+	border-radius : 3px;
+    overflow: hidden;
+    position: relative;
+	width: 110px;
+	height : 110px;
+}
+.imgUploadBox:before {
+    content: "";
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    text-align: center;
+	transform: translate(-50%, -60%);
+	-webkit-transform: translate(-50%, -60%);
+	width: 41px;
+	height : 34px;
+    font-size: 12px;
+	font-weight: 500;
+	background : url(/common/img/iconCamera.png) no-repeat center / cover;
+}
+input.hide {
+    display: none;
+}
+.imgUploadBox .upload_btn {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    z-index: 5;
+}
+.imgUploadBox canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+}
+.imgUploadBox img {
+    width: 100%;
+    height: 100%;
+    /* position: relative; */
+    z-index: 10;
+    /* display: none; */
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.imgUploadBox .del_btn {
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    padding: 3px 5px;
+    opacity: 0.8;
+    z-index: 15;
+    background-color: #ef5b5c;
+    font-size: 12px;
+    font-weight: 400;
+    text-align: center;
+    line-height: 16px;
+    color: #fff;
+}
+/* :: 리뉴얼 1 리뷰 작성 페이지 파트 close  */
+
+
+
+/* :: 앱 다운로드 페이지 파트 open  */
+.container.getAppMod .section.headLineSect {
+	height: 13.889vw;
+	max-height : 100px;
+    border-bottom: none;
+    position: relative;
+    top: 0;
+    z-index: 15;
+    text-align: center;
+	padding: 0;
+	font-size : 0;
+}
+.section.getAppSect {
+	padding : 0;
+}
+.section.getAppSect img.getAppImgUpper {
+	width : 100%;
+	height : 100%;
+	display : block;
+}
+.section.getAppSect img.getAppImgMiddle {
+	width : calc(100% - 11.111vw);
+	height : 100%;
+	padding : 9.167vw 5.556vw 4.167vw 5.556vw;
+	display : block;
+}
+
+.section.getAppSect .btnGroup {
+	width : 100%;
+	height : 13.889vw;
+	line-height : 13.889vw;
+	display : block;
+	margin : 0;
+	padding : 0;
+}
+
+.section.getAppSect .getAppBtn {
+	width: calc(100% - 11.111vw);
+	height: 100%;
+    background-color: #ef5b5c;
+    text-align: center;
+    display: block;
+    font-size: 4.167vw;
+    color: #fff;
+	font-weight: 700;
+	margin : 0 5.556vw;
+}
+.section.getAppSect img.getAppImgBottom {
+	width : calc(100% - 11.111vw);
+	height : 100%;
+	padding : 8.333vw 5.556vw 20.833vw 5.556vw;
+	display : block;
+}
+@media(min-width:721px) {
+	.section.getAppSect .btnGroup {
+		height : 100px;
+		line-height : 100px;
+	}
+	.section.getAppSect .getAppBtn {
+		font-size : 30px;
+	}
+}
+.section.headLineSect .getAppLogo {
+	position : absolute;
+	top : 50%;
+	transform : translateY(-50%);
+	-webkit-transform : translateY(-50%);
+	display : block;
+	left : 40px;
+	width : 20.139vw;
+	height : 7.639vw;
+	max-width : 145px;
+	max-height : 55px;
+	background : url(/common/img/logo_pig.png) no-repeat center / cover;
+}
+@media(max-width:721px) {
+	.section.headLineSect .getAppLogo {
+		left : 5.556vw;
+	}
+}
+/* :: 앱 다운로드 페이지 파트 close  */
+
+
+/* :: 알림 팝업 파트 open  */
+.popup.preparingStore {
+	z-index : 200;
+}
+.popup.preparingStore .popupText {
+	text-align : center;
+	font-size : 20px;
+	font-weight : 800;
+	color : #000;
+	z-index : 200;
+}
+.contents.overlay_w:before {
+	content : "";
+	position : absolute;
+	top : 0;
+	left : 0;
+	width : 100%;
+	height : 100%;
+	background-color : #fff;
+	opacity : 0.5;
+	z-index : 150;
+}
+.alarmTip {
+	/* padding-bottom  : 10px; */
+	/* margin-top : -10px; */
+	font-size : 12px;
+	color : #EF5B5C;
+	display : block;
+	float : left;
+	margin-top : -15px;
+}
+
+.btnBox.shopOrderBtn.locked:before {
+	content : "배달 가능 지역이 아닙니다. 주소를 다시 입력해주세요.";
+	background-color : #af5b5c;
+	position : absolute;
+	top : 0;
+	left : 0;
+	width : 100%;
+	font-size : 14px;
+	line-height : 60px;
+	text-align : center;
+	display : block;
+	color : #fff;
+}
+.btnBox.shopOrderBtn.locked .sumitBtn {
+	position : relative;
+	pointer-events : none;
+	font-size : 0;
+}
+
+/* :: 알림 팝업 파트 close  */
+
+
+/* :: ksg_20200527_1831 open : 주문하기 페이지 추가 내용 */
+.orderInfo .takeTypeCheck {
+	display : inline-block;
+	margin : 15px 20px 0 0;
+	position : relative;
+}
+.orderInfo .takeTypeCheck:last-child {
+	margin-right : 0;
+}
+.orderInfo .takeTypeCheck div {
+	display : inline-block;
+	vertical-align : middle;
+}
+.takeTypeCheck .checkboxGroup {
+	padding-right : 10px;
+}
+.orderInfo.hide {
+	display : none;
+}
+/* :: ksg_20200527_1831 close : 주문하기 페이지 추가 내용 */
+
+/* :: ksg_20200528_1213 open : "페이지를 찾을 수 없습니다." 관련 내용 */
+.section.notFoundSect {
+	padding-top: 158px;
+    text-align: center;
+}
+.notFoundIcon {
+	width : 70px;
+	height : 70px;
+}
+.section.notFoundSect .infoText {
+	margin-top : 30px;
+	margin-bottom : 40px;
+	font-size : 20px;
+}
+.section.notFoundSect .btn {
+	display : inline-block;
+	height : 40px;
+	line-height : 40px;
+	width : 156px;
+	font-size : 14px;
+	color : #fff;
+	background-color : #ef5b5c;
+}
+div.hide {
+	display : none;
+}
+/* :: ksg_20200528_1213 close : "페이지를 찾을 수 없습니다." 관련 내용 */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* :: 20200617_1105 open : 새로운 형태의 페이지 추가 관련 내용. */
+/* :: 프랜차이즈 메인 페이지 open */
+.pageHeadline.addressSort {
+	display : block;
+	line-height : 50px;
+	background-color : #fff;
+	text-align : center;
+}
+.textBtn.adressSort {
+	display : block;
+	padding : 0 20px;
+	
+}
+.textBtn.adressSort .textBox {
+	display : inline-block;
+	max-width : calc(100% - 50px);
+	overflow : hidden;
+    text-overflow : ellipsis;
+	white-space : nowrap;
+	vertical-align : middle;
+	margin-right : 10px;
+	font-weight : 600;
+}
+.dropdownIcon {
+	display : inline-block;
+	width : 11px;
+	height : 6px;
+	background : url('/common/img/icon_dropDown.png') no-repeat center / cover;
+}
+.section.subMenus.franchiseSort {
+	margin-top : 0;
+}
+.slick-dotted.slick-slider.franchiseSort {
+	margin-bottom : 0;
+}
+.franchiseDot {
+	display : block;
+	position : absolute;
+	bottom : 15px;
+	left : 50%;
+	transform : translateX(-50%);
+	-webkit-transform : translateX(-50%);
+}
+.franchiseDot li {
+	position : relative;
+	display : inline-block;
+	margin-left : 6px;
+	width : 6px;
+	height : 6px;
+}
+.franchiseDot li:first-child {
+	margin-left : 0;
+}
+.franchiseDot li button {
+	display : none;
+}
+.franchiseDot li:before {
+	content : "";
+	position : absolute;
+	top : 0;
+	left : 0;
+	background-color : #fff;
+	width : 6px;
+	height : 6px;
+	border-radius : 50%;
+}
+.franchiseDot li.slick-active:before {
+	background-color : #ef5b5c;
+}
+.storeList.franchiseSort {
+	padding : 0 20px 73.5px 20px;
+}
+.titleBox.franchiseSort .titleText {
+	display : inline-block;
+	font-size : 18px;
+	font-weight : 600;
+	vertical-align : bottom;
+}
+
+.franchiseInfoBox .ratingStar {
+	width : 18px;
+	height : 18px;
+	background : url(/common/img/ratingStarOn.png) no-repeat center / cover;
+	vertical-align : middle;
+}
+.rateBox.franchiseSort {
+	display : inline-block;
+	vertical-align : bottom;
+	margin-left : 12px;
+}
+.franchiseInfoBox .rateNum {
+	margin-left : 5px;
+	font-size : 14px;
+	vertical-align : bottom;
+}
+.addressBox.franchiseSort {
+	margin-top : 11px;
+	font-size : 14px;
+}
+.section.subMenus .subMenuCon ul.franchiseSort li {
+	padding : 14px 0;
+}
+.sendTimeBox.franchiseSort {
+	margin-top : 11px;
+	font-size : 12px;
+}
+.sendTimeBox.franchiseSort span {
+	margin-right : 10px;
+}
+.sendTimeBox.franchiseSort span:last-child {
+	margin-right : 0;
+}
+.section.footerSect.franchiseSort {
+	position : fixed;
+	margin : 0;
+	max-width : 450px;
+	width : 100%;
+	background-color : #fff;
+	border-top : 1px solid #eeeeee;
+	/* padding : 0 20px; */
+	padding : 0;
+	height : 63.5px;
+	line-height : 63.5px;
+}
+.contents.franchiseSort {
+	padding-bottom : 0;
+	height : 100%;
+}
+.btnGroup.footerSort {
+	font-size : 0;
+	margin-top : 0;
+	height : auto;
+}
+.btnGroup.footerSort .btn {
+	display : inline-block;
+	position : relative;
+	text-align : center;
+	width : 20%;
+	height : 63.5px;
+}
+.btnGroup.footerSort .iconText {
+	position : absolute;
+	bottom : 6px;
+	text-align : center;
+	width : 100%;
+	font-size : 12px;
+	line-height : 12px;
+}
+.btnGroup.footerSort i {
+	position : absolute;
+	bottom : 24px;
+	left : 50%;
+	transform : translateX(-50%);
+	-webkit-transform : translateX(-50%);
+}
+.btn.homeSort i {
+	width : 34px;
+	height : 34px;
+	background : url(/common/img/icon_home.png) no-repeat center / 22px 22px;
+}
+.btn.searchSort i {
+	width : 34px;
+	height : 34px;
+	background : url(/common/img/icon_location.png) no-repeat center / 19px 22px;
+}
+.btn.menuSort i {
+	width : 34px;
+	height : 34px;
+	background : url(/common/img/icon_menu.png) no-repeat center / 34px 34px;
+}
+.btn.couponSort i {
+	width : 34px;
+	height : 34px;
+	background : url(/common/img/icon_coupon.png) no-repeat center / 25px 17px;
+}
+.btn.mySort i {
+	width : 34px;
+	height : 34px;
+	background : url(/common/img/icon_my.png) no-repeat center / 22px 22px;
+}
+.btn.menuSort.activated i {
+	width : 34px;
+	height : 34px;
+	background : url(/common/img/icon_menu_activated.png) no-repeat center / 34px 34px;
+}
+.franchiseSort .storeTitleBox .sliderImgSingle {
+	height : 55.556vw;
+}
+.listCover {
+	position : absolute;
+	top : 0;
+	left : 0;
+	width : 100%;
+	height : 100%;
+}
+/* :: 프랜차이즈 메인 페이지 close */
+
+/* :: 프랜차이즈 인덱스 페이지 open */
+.tipBox.subSectionTip.franchiseSort {
+	padding-bottom : 125.5px;
+}
+
+.section.subMenus .listTab.franchiseSort ul li {
+	width : 33.33%;
+}
+/* :: 프랜차이즈 인덱스 페이지 close */
+
+/* :: 프랜차이즈 장바구니 페이지 open */
+.priceBox.floatR {
+	float : right;
+}
+/* :: 프랜차이즈 장바구니 페이지 close */
+
+/* :: 프랜차이즈 로그인 페이지 open */
+.section.loginSect {
+	padding : 55px 0 15px 0;
+}
+.tabGroup.loginSort {
+	height : 50px;
+	line-height : 50px;
+	font-size : 0;
+	border-bottom : 1px solid #eeeeee;
+}
+.tabGroup.loginSort .tabBtn {
+	display : inline-block;
+	position : relative;
+	width : 50%;
+	text-align : center;
+	font-size : 18px;
+}
+.tabGroup.loginSort .tabBtn.activated:before {
+	content : "";
+	position : absolute;
+	bottom : 0;
+	left : 0;
+	width : 100%;
+	border : 2px solid #ef5b5c;
+}
+.tbox.loginSort {
+	display: block;
+    height: 48px;
+    margin-bottom: 10px;
+    font-size: 14px;
+    width: calc(100% - 34px);
+    padding: 0 16px;
+    font-weight: 600;
+	border-radius: 3px;
+	border : 1px solid #ddd;
+}
+.infoGroup.loginSort {
+	padding : 20px 20px 0 20px;
+}
+.tbox::placeholder {
+	color : #ababab;
+}
+.btn.loginSubmit {
+	display : block;
+	width: 100%;
+	background-color: #ef5b5c;
+	color: #fff;
+	font-size: 14px;
+	text-align: center;
+	line-height: 40px;
+}
+.findGroup.loginSort {
+	margin-top : 20px;
+	text-align : center;
+	font-size : 0;
+}
+.findGroup.loginSort .btn.findSort {
+	display : inline-block;
+	font-size : 15px;
+	font-weight : 200;
+	padding : 0 30px;
+	border-left : 1px solid #000;
+}
+.findGroup.loginSort .btn.findSort:first-child {
+	border-left : none;
+}
+.socialLogGroup {
+	margin-top : 55px;
+	text-align : center;
+	padding : 0 20px;
+}
+.socialLogGroup .socialHead {
+	position : relative;
+	font-weight : 200;
+	font-size : 15px;
+	margin-bottom : 15px;
+}
+.socialHead:before {
+	content : "";
+	position : absolute;
+	/* border-bottom : 0.5px solid #000; */
+	width : 100%;
+	height : 0.1px;
+	background-color : #000;
+	top : 50%;
+	left : 0;
+	transform : translateY(-50%);
+	-webkit-transform : translateY(-50%);
+}
+.socialHead .textBox {
+	position : relative;
+	background-color : #fff;
+	width : 83px;
+	margin : 0 auto;
+}
+.socialLogGroup .btnGroup.socialSort {
+	height : auto;
+}
+.btnGroup.socialSort .btn.loginSubmit {
+	margin-bottom : 5px;
+}
+.btnGroup.socialSort .btn.loginSubmit:last-child {
+	margin-bottom : 0;
+}
+.btnGroup.socialSort .btn.loginSubmit.kakaoMod {
+	background-color : #fbe500;
+	color : #412e34;
+	font-weight : 600;
+}
+.btnGroup.socialSort .btn.loginSubmit.naverMod {
+	background-color : #2db400;
+	color : #fff;
+	font-weight : 600;
+}
+.btn.loginSubmit .socialCover {
+	display : inline-block;
+	margin : 0 auto;
+}
+.btn.loginSubmit.kakaoMod i {
+	vertical-align : middle;
+	width : 22px;
+	height : 20px;
+	background : url('/common/img/icon_kakao_onlyBG.png') no-repeat center / cover;
+}
+.btn.loginSubmit.naverMod i {
+	vertical-align : middle;
+	width : 22px;
+	height : 20px;
+	background : url('/common/img/icon_naver.png') no-repeat center / cover;
+}
+.socialCover .textBox {
+	margin-left : 15px;
+	vertical-align : middle;
+}
+/* :: 프랜차이즈 로그인 페이지 close */
+
+
+/* :: 프랜차이즈 아이디 찾기 페이지 open */
+.textLinkGroup {
+	margin-top : 15px;
+	font-size : 14px;
+}
+.btn.textLinkSort {
+	float : right;
+	text-decoration : underline;
+	text-underline-position : under;
+}
+.btn.inInputSort {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    border: 1px solid #ef5b5c;
+    color : #ef5b5c;
+	width : 108px;
+	height : 38px;
+	line-height : 40px;
+    font-size: 14px;
+	font-weight: 600;
+	text-align : center;
+}
+/* :: 프랜차이즈 아이디 찾기 페이지 close */
+
+/* :: 비회원 로그인 페이지 open */
+.checkboxGroup.agreeSort {
+	display : inline-block;
+	position : relative;
+	vertical-align : middle;
+}
+.checkboxGroup.agreeSort .checkText {
+	display : inline-block;
+	margin-left : 10px;
+	vertical-align: middle;
+}
+.checkboxGroup.agreeSort input[type="checkbox"]:not(:checked) + label {
+	display : inline-block;
+	vertical-align: middle;
+}
+.checkboxGroup.agreeSort input[type="checkbox"]:checked + label {
+	display : inline-block;
+	vertical-align: middle;
+}
+.agreeGroup.loginSort {
+	margin-top : 5px;
+	margin-bottom : 20px;
+	font-size : 14px;
+}
+.agreeGroup.loginSort .btn.textLinkSort {
+	line-height : 20px;
+}
+/* :: 비회원 로그인 페이지 close */
+
+/* :: 프랜차이즈 주문하기 페이지 open */
+.sbox.choiceSort {
+	line-height : 50px;
+	height : 48px;
+	border : 1px solid #dddddd;
+	border-radius : 3px;
+	/* padding : 0 16px; */
+}
+.sbox.choiceSort:before {
+    content: "";
+    width: 10px;
+    height: 5px;
+    position: absolute;
+    top: 22px;
+    right: 16px;
+    background: url(/common/img/iconMenuDown.png) no-repeat center / cover;
+}
+.sbox.choiceSort ul li a {
+	padding: 0 16px;
+	width : auto;
+	height : 100%;
+	display : block;
+}
+.sbox.choiceSort > a {
+    padding: 0 16px;
+	width: calc(100% - 32px);
+    display: block;
+	text-align: left;
+}
+.sbox.choiceSort ul {
+	border : 1px solid #dddddd;
+	top : 48px;
+}
+.section.orderSect .orderInfo.coupon,
+.section.orderSect .orderInfo.point {
+	padding-top : 20px;
+	padding-bottom : 20px;
+}
+.orderInfo.coupon .infoTitle,
+.orderInfo.point .infoTitle {
+	padding-bottom : 20px;
+}
+
+
+.customInfo .inputGroup.priceSort input.tbox {
+	position : relative;
+	padding : 0 30px;
+	margin : 0;
+	width : calc(100% - 60px);
+}
+
+.orderInfo .inputGroup {
+	position : relative;
+	width : 129px;
+	display : inline-block;
+}
+.inputGroup .priceGauge {
+	position : absolute;
+	font-size : 14px;
+	top : 18px;
+	right : 16px;
+}
+.btn.small.nearInput {
+	display : inline-block;
+	border : 1px solid #ef5b5c;
+	color : #ef5b5c;
+	margin-left : 6px;
+	width : 80px;
+	height : 38px;
+	line-height : 40px;
+	text-align : center;
+	font-size : 14px;
+}
+.remainCount {
+	display : inline-block;
+	font-size : 14px;
+	margin-left : 9px;
+}
+
+.btn.locaHistory {
+	position : absolute;
+	top : 20px;
+	right : 20px;
+	font-size : 14px;
+	font-weight : 600;
+}
+.orderInfo.address .infoTitle {
+	padding-bottom : 20px;
+}
+.orderInfo.address .changeBtn.address {
+	top : 60px;
+}
+
+/* :: 프랜차이즈 주문하기 페이지 close */
+
+
+
+/* :: 프랜차이즈 최근 배송지 페이지 open */
+ul.historyList .roadText {
+	font-size: 12px;
+	margin-top : 11px;
+}
+.section.subMenus .subMenuCon ul li a.btn.delLocaMod {
+	display : inline-block;
+	width : auto;
+	height : auto;
+	top : 50%;
+	right : 20px;
+	left : auto;
+	transform : translateY(-50%);
+	-webkit-transform : translateY(-50%);
+	font-size : 15px;
+	font-weight : 600;
+}
+.listTitleBox.locaHistorySort {
+	line-height : 55px;
+	height : 55px;
+	font-size : 14px;
+	font-weight : 800;
+	padding : 0 20px;
+	border-bottom : 1px solid #eee;
+}
+.listTitleBox.locaHistorySort.searchMod {
+	border-bottom : none;
+	padding : 0;
+}
+.subSection.searchLocaSort {
+	padding : 0 20px;
+}
+.btn.inInputSort.searchLocaMod {
+	width : 80px;
+}
+.tbox.searchLocaSort {
+    display: block;
+    height: 48px;
+    margin-bottom: 10px;
+    font-size: 14px;
+    width: calc(100% - 34px);
+    padding: 0 16px;
+    font-weight: 600;
+    border-radius: 3px;
+    border: 1px solid #ddd;
+}
+.btn.regLocaSort {
+	display : block;
+    border: 1px solid #ef5b5c;
+    color: #ef5b5c;
+    padding: 11px 0;
+    font-size: 14px;
+	font-weight: 600;
+	width : calc(100% - 40px);
+	margin : 0 auto;
+	text-align : center;
+}
+/* :: 프랜차이즈 최근 배송지 페이지 close */
+
+
+/* :: 마이페이지 open */
+.section.subMenus.myPageSort {
+	margin-top : 56px;
+}
+.section.subMenus .subMenuCon ul.myMenuList li {
+	height : 50px;
+	line-height : 50px;
+	padding : 0 20px;
+}
+.section.subMenus .subMenuCon ul.myMenuList li:before {
+	content : "";
+	position : absolute;
+	top : 20px;
+	right : 17px;
+	width : 6px;
+	height : 9px;
+	background : url('/common/img/iconMenuRight.png') no-repeat center / cover;
+}
+.icon.orderHistory {
+	width : 18px;
+	height : 16px;
+	background : url('/common/img/iconOrderHistory.png') no-repeat center / cover;
+}
+.myMenuList .icon {
+	vertical-align : middle;
+}
+.myMenuList .menuText {
+	font-size : 14px;
+	font-weight : 600;
+	padding-left : 19px;
+	vertical-align : middle;
+}
+.icon.point {
+	width : 17px;
+	height : 20px;
+	background : url('/common/img/iconPoint.png') no-repeat center / cover;
+}
+.icon.review {
+	width : 18px;
+	height : 16px;
+	background : url('/common/img/iconReview.png') no-repeat center / cover;
+}
+/* :: 마이페이지 close */
+
+/* :: ars 포인트 내역 페이지 open */
+.titleBox.displaySort {
+	padding : 30px 0;
+	text-align : center;
+	font-weight : 800;
+}
+.titleBox.displaySort .titleText {
+	font-size : 14px;
+}
+.titleBox.displaySort .infoCounter {
+	margin-top : 12px;
+	font-size : 20px;
+	color : #ef5b5c;
+}
+.listHeadLine {
+	background-color : #eeeeee;
+	height : 50px;
+	line-height : 50px;
+	font-size : 14px;
+	font-weight : 800;
+	padding : 0 20px;
+}
+ul.historyList .titleText {
+	font-size : 14px;
+	font-weight : 600;
+}
+ul.historyList .titleText.strongPoint {
+	font-size : 16px;
+}
+ul.historyList .dateText {
+	margin-top : 11px;
+	font-size : 14px;
+	font-weight : 600;
+}
+.section.subMenus .subMenuCon ul.historyList li {
+	padding : 20px;
+}
+ul.historyList .changeStatus {
+	position : absolute;
+	top : 50%;
+	right : 20px;
+	transform : translateY(-50%);
+	-webkit-transform : translateY(-50%);
+	font-size : 14px;
+}
+ul.historyList .changeStatus.plus {
+	color : #ef5b5c;
+}
+/* :: ars 포인트 내역 페이지 close */
+
+/* :: ars 리뷰관리 페이지 open */
+ul.historyList .dateText.foreMod {
+	margin-bottom : 11px;
+	margin-top : 0;
+}
+ul.historyList .reviewRateGroup {
+	display : block;
+	margin-top : 11px;
+}
+.reviewRateGroup .ratingStar.activated {
+    width: 10px;
+    height: 10px;
+    background: url(/common/img/ratingStarOn.png) no-repeat center / cover;
+}
+.reviewRateGroup .ratingStar {
+    width: 10px;
+    height: 10px;
+	background: url(/common/img/ratingStarOff_grey.png) no-repeat center / cover;
+	margin-left : 2px;
+}
+.reviewRateGroup .ratingStar:first-child {
+	margin-left : 0;
+}
+.iconMenuRight {
+	width: 6px;
+    height: 9px;
+	background: url(/common/img/iconMenuRight.png) no-repeat center / cover;
+}
+ul.historyList .iconMenuRight {
+	position : absolute;
+	top : 50%;
+	right : 18px;
+	transform : translateY(-50%);
+	-webkit-transform : translateY(-50%);
+}
+/* :: ars 리뷰관리 페이지 close */
+
+/* :: ars 주문내역 페이지 open  */
+ul.historyList .nameText {
+	margin-top : 11px;
+	font-size : 14px;
+	font-weight : 600;
+}
+/* :: ars 주문내역 페이지 close  */
+
+/* :: ars 리뷰상세 페이지 open */
+.infoGroup.reviewHeadSort {
+	padding : 20px 20px 30px 20px;
+}
+.infoGroup.reviewHeadSort .dateText {
+	font-size : 14px;
+	font-weight : 600;
+}
+.infoGroup.reviewHeadSort .titleText {
+	font-size : 14px;
+	font-weight : 600;
+	margin-top : 11px;
+}
+.infoGroup.reviewHeadSort .reviewRateGroup {
+	margin-top : 11px;
+}
+.btn.textLinkSort.targetSort {
+	display : block;
+	float : initial;
+	margin-top : 11px;
+	font-size : 14px;
+	font-weight : 600;
+}
+.btn.delReviewSort {
+	position : absolute;
+	top : 20px;
+	right : 20px;
+	border: 1px solid #ef5b5c;
+    color: #ef5b5c;
+    width: 78px;
+    height: 38px;
+    line-height: 40px;
+    font-size: 14px;
+    font-weight: 600;
+    text-align: center;
+}
+.infoGroup.reviewConSort {
+	padding : 0 20px;
+}
+.reviewImg {
+	width : 100%;
+}
+.textBox.reviewText {
+	margin-top : 30px;
+	font-size : 14px;
+}
+/* :: ars 리뷰상세 페이지 close */
+
+
+/* :: ars 쿠폰함 페이지 open */
+.listHeadLine.remainCounter {
+	font-size : 0;
+	position : relative;
+}
+.listHeadLine.remainCounter span {
+	font-size : 14px;
+}
+.btn.textBtn.regCoupSort {
+	position : absolute;
+	top : 50%;
+	right : 20px;
+	transform : translateY(-50%);
+	-webkit-transform : translateY(-50%);
+	font-size : 14px;
+}
+.historyList.couponSort .titleText {
+	font-size : 16px;
+}
+ul.historyList .priceText {
+	font-size : 24px;
+	font-weight : 800;
+	margin-top : 11px;
+}
+.tipBox.couponSort {
+	padding : 20px 20px 0 20px;
+	color: #ef5b5c;
+	font-size : 12px;
+}
+.iconCoupon {
+	width : 40px;
+	height : 27px;
+	background : url(/common/img/icon_coupon.png) no-repeat center / cover;
+}
+
+.section.subMenus .subMenuCon ul li.emptyCoupSort {
+	border-bottom : none;
+	/* position : fixed; */
+	width : calc(100% - 40px);
+	max-width : 450px;
+	height : calc(100% - 160px);
+}
+li.emptyCoupSort.hide {
+	display : none;
+}
+.section.subMenus .subMenuCon ul li.emptyCoupSort a.btn.regInfoSort {
+	position : initial;
+	display : block;
+    border: 1px solid #ef5b5c;
+    color: #ef5b5c;
+    padding: 12px 0;
+    font-size: 14px;
+    font-weight: 600;
+	width: calc(100% - 20px);
+	height : auto;
+    margin: 0 auto;
+    text-align: center;
+}
+.iconGroup.centerMod {
+	display : block;
+	position : absolute;
+	top : 50%;
+	left : 0;
+	transform : translateY(-50%);
+	-webkit-transform : translateY(-50%);
+	text-align : center;
+	width : 100%;
+}
+.textBox.emptyWord {
+	display : block;
+	margin-top : 20px;
+	font-size : 16px;
+	font-weight : 600;
+}
+.emptyCoupSort .tbox {
+	height : 48px;
+}
+.emptyCoupSort .tbox.coupRegSort {
+	margin-bottom : 20px;
+}
+/* :: ars 쿠폰함 페이지 close */
+
+
+/* :: ars 주소검색 페이지 open */
+.locaHistorySort.underInputMod {
+	margin-top : 30px;
+}
+/* :: ars 주소검색 페이지 close */
+
+
+/* :: ars 현위치 페이지 open */
+html, body{
+	height : 100%;
+}
+.container.mapSort {
+	height : 100%;
+}
+.section.mapSect {
+	padding-top : 56px;
+	height : calc(100% - 156px);
+	background-color : #ccc;
+}
+.textBox.mapAddr {
+	/* width : 100%; */
+	padding : 18px 20px;
+	text-align : center;
+	font-size : 14px;
+	font-weight : 600;
+	background-color : #eee;
+}
+.btnBox.shopOrderBtn.mapMod {
+	height : auto;
+}
+.btnBox.shopOrderBtn.mapMod a {
+	line-height : 50px;
+}
+/* :: ars 현위치 페이지 close */
+
+/* :: ars 매장검색 페이지 open  */
+.subSection.searchLocaSort.searchCorpMod {
+	padding-top : 20px;
+	padding-bottom : 10px;
+}
+/* :: ars 매장검색 페이지 close  */
+
+/* :: ars 매장위치상세 페이지 open */
+.section.mapSect.withInfoMod {
+	height : 200px;
+}
+table.corpLocaInfo {
+	border-top : 1px solid #eee;
+	border-bottom : 1px solid #eee;
+	display : block;
+	padding : 12px 0;
+}
+
+table.corpLocaInfo th,
+table.corpLocaInfo td {
+	text-align : left;
+	font-size : 14px;
+	font-weight : 400;
+	padding : 7.5px 20px;
+}
+/* :: ars 매장위치상세 페이지 close */
+
+/* :: ars 아이디찾기 완료 페이지 open */
+.textGroup.foundSort {
+	padding : 60px 0 70px 0;
+	text-align : center;
+	font-size : 18px;
+}
+.textGroup.foundSort div {
+	margin-top : 20px;
+}
+.textGroup.foundSort div:first-child {
+	margin-top : 0;
+}
+/* :: ars 아이디찾기 완료 페이지 close */
+
+/* :: ars 회원가입 페이지 open */
+.loginSort .infoTitle {
+	margin-bottom : 15px;
+	font-size : 14px;
+	font-weight : 600;
+}
+.agreeGroup.loginSort.joinMod {
+	padding : 20px;
+	border-top : 1px solid #eee;
+	margin-top : 0;
+	margin-bottom : 0;
+}
+.agreeCase.multiSort {
+	margin-top : 20px;
+}	
+.agreeCase.multiSort:first-child {
+	margin-top : 0;
+}
+.btn.inInputSort.joinMod {
+	width : 80px;
+}
+.btnBox.shopOrderBtn a {
+	line-height : 50px;
+}
+.btnBox.shopOrderBtn {
+	height : 50px;
+}
+/* :: ars 회원가입 페이지 close */
+
+
+/* :: 20200617_1105 close : 새로운 형태의 페이지 추가 관련 내용. */
+
+/* ksg_20200702_1626 open  */
+.section.subMenus .listTab ul li.phoneCallSort {
+    color : #fb6d3a;
+    font-weight : 600;
+}
+/* ksg_20200702_1626 close  */
