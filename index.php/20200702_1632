@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="ko">
+<?php include $_SERVER['DOCUMENT_ROOT'] .  '/common/pages/head.php';
+?>
+<body>
+<div class="container main">
+	<div class="contents">
+		<div class="section storeSection">
+			<div class="storeTitleBox">
+				<div class="storeTitleSlider" id="goodsImgSel">
+				</div>
+				<!-- <div class="storeTitleSlider">
+					<div class="sliderImgSingle"> <img src="/files/corpImg/2020/202005/20200513113108_1.jpg"></div>
+					<div class="sliderImgSingle"> <img src="/files/corpImg/2020/202005/20200513113108_1.jpg"></div>
+				</div> -->
+			</div>
+			<div class="storeInfoBox">
+				<div class="upperInfo">
+					<div class="storeName">
+						<div id="corpName"></div>
+
+
+						<!-- ::: 리뉴얼 디자인의 매장 별점 파트 open -->
+						<div class="storeRateGroup">
+							<i class="ratingStar" id="star1"></i>
+							<i class="ratingStar" id="star2"></i>
+							<i class="ratingStar" id="star3"></i>
+							<i class="ratingStar" id="star4"></i>
+							<i class="ratingStar" id="star5"></i>
+							<span class="rateDisplay">4.0</span>
+						</div>
+						<!-- ::: 리뉴얼 디자인의 매장 별점 파트 close -->
+
+					</div>
+
+					<!-- ::: 리뉴얼 디자인에서 빠지는 내용 single  -->
+					<!-- <div class="storeTelephone" id="corpPhone"></div>
+					<div class="f_orange noticeHoliday" id="isHoliday"></div> -->
+
+				</div>
+				<div class="lowerInfo">
+
+					<!-- ::: 리뉴얼 디자인에서 빠지는 부분 single  -->
+					<!-- <div class="infoBox rating">
+						<div class="infoIcon">
+							<img src="/common/img/icon_ratingStar.png">
+						</div>
+						<div>
+							<span class="f_main f_bold infoTitle">평점</span>
+							<span id="reviewAvg"></span>
+						</div>
+						<div class="ratingCount">
+							(0)
+						</div>
+					</div> -->
+
+					<div class="infoBox price">
+						<div>
+							<span class="f_white infoTitle">최소주문금액</span>
+							<span id="minPrice" class="f_white"></span>
+						</div>
+					</div>
+					<div class="infoBox delTime">
+						<div>
+							<span class="f_white infoTitle">배달예상시간</span>
+							<span id="avgTime" class="f_white"></span>
+							<span class="f_white">분</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="section subMenus">
+			<div class="listTab">
+				<ul>
+
+                    <li class="titleTabMenu phoneCallSort">
+						<a href="javascript:void(0)">전화하기</a>
+					</li>
+
+					<li class="titleTabMenu choiceSort selected">
+						<a href="javascript:void(0)">메뉴</a>
+					</li>
+					<li class="titleTabReview choiceSort">
+						<a href="javascript:void(0)">리뷰</a>
+					</li>
+					<li class="titleTabInfo choiceSort">
+						<a href="javascript:void(0)">매장정보</a>
+					</li>
+					<li class="titleTabPast choiceSort">
+						<a href="javascript:void(0)">주문내역</a>
+					</li>
+				</ul>
+			</div>
+			<div class="subMenuCon">
+				<div class="subSection itemMenuGroup" id="menuList">
+				</div>
+
+				<!-- ::: 리뉴얼 디자인에서 추가됨. single -->
+				<div class="tipBox subSectionTip">* 메뉴 이미지는 이미지컷으로 실제 배달되는 음식과 다를 수 있습니다.</div>
+
+				<div class="subSection reviewGroup">
+
+					<!-- ::: 리뉴얼 디자인 반영된 리뷰 파트 open  -->
+					<div class="reviewCounter">
+						<span>리뷰</span>
+						<span id="reviewTot">0개</span>
+					</div>
+					<ul class="reviewList">
+					</ul>
+					<!-- ::: 리뉴얼 디자인 반영된 리뷰 파트 close  -->
+
+				</div>
+				<div class="subSection storeInfoGroup">
+					<div class="infoCase">
+						<div class="infoPart">
+							<div class="title">업체정보</div>
+							<div class="infoText" id="corpInfo">
+							</div>
+						</div>
+                        <div class="infoPart">
+							<div class="title">위치정보</div>
+							<div class="infoText" id="corpAddr">
+							</div>
+						</div>
+						<div class="infoPart">
+							<div class="title">결제정보</div>
+							<div class="infoText">
+								<div class="infoInnerCase">
+									<div class="infoType">최소주문금액</div>
+									<div class="infoStat" id="minPriceTab"></div>
+								</div>
+								<div class="infoInnerCase">
+									<div class="infoType">결제수단</div>
+									<div class="infoStat">신용카드, 휴대폰결제, 현장결제(카드/현금)</div>
+								</div>
+							</div>
+						</div>
+                        <div class="infoPart">
+							<div class="title">영업정보</div>
+							<div class="infoText">
+								<div class="infoInnerCase">
+									<div class="infoType">운영시간</div>
+									<div class="infoStat">매일 오전 09:40 ~ 오후 10:40</div>
+                                    <div class="infoType">휴무일</div>
+									<div class="infoStat">연중무휴</div>
+                                    <div class="infoType">전화번호</div>
+									<div class="infoStat" id="corpPhone"></div>
+								</div>
+							</div>
+                        </div>
+                        <div class="infoPart">
+							<div class="title">사업자정보</div>
+							<div class="infoText">
+								<div class="infoInnerCase">
+									<div class="infoType">상호명</div>
+									<div class="infoStat" id="corpSubName">땡땡버거</div>
+                                    <div class="infoType">사업자등록번호</div>
+									<div class="infoStat" id="corpNum">110-111568-12345</div>
+								</div>
+							</div>
+                        </div>
+                        <div class="infoPart">
+							<div class="title">원산지정보</div>
+							<div class="infoText" id="originMark">
+                                쇠고기(로스트비프, 미트볼) - 호주산<br>
+                                쇠고기(로스트비프, 미트볼) - 호주산<br>
+                                쇠고기(로스트비프, 미트볼) - 호주산<br>
+							</div>
+						</div>
+					</div>
+					<!-- <div class="infoEmpty">상세내용이 없습니다.</div> -->
+				</div>
+
+
+				<!-- :: 과거 주문내역 파트 -->
+				<div class="subSection pastOrderGroup">
+					<ul class="orderListBox">
+						<li>
+							<div class="orderInfoGroup">
+								<div class="orderTime">2020.01.01 (목)</div>
+								<div class="itemTitle">오리지널 세트</div>
+								<div class="itemInfo">
+									<div class="chosenOptions">
+										<span>기본 1개 </span>
+										<span>20,000 원</span>
+									</div>
+								</div>
+								<a class="orderSpecLink" href="/order/orderSpec">
+									<img src="/common/img/nextLink.png">
+								</a>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- :: 카트 아이콘 파트 -->
+	<div class="floatCartBox">
+		<div class="fixedCart">
+			<a class="cartBtn" href="javascript:go_cart();">
+				<img src="/common/img/icon_cart.png">
+				<div class="pickedNum" id="cartNum">
+				</div>
+			</a>
+		</div>
+	</div>
+
+	<!-- :: 회사 정보 푸터 파트 -->
+	<div class="section footerSect">
+		<div>주) 스파이더아이앤씨</div>
+		<div>전화번호 : 1811-1898</div>
+		<div>이메일 : sales@spiderinc.co.kr</div>
+		<i class="footerLogo"></i>
+	</div>
+</div>
+
+<!-- :: 상품 미 선택시 알림 팝업. 보이게 하려면 class="activated" 를 추가하시오. -->
+<?php include $_SERVER['DOCUMENT_ROOT'] .  '/common/pages/popup.php';?>
+
+<script src="/goods/js/index.js"></script>
+<script>
+
+
+// :: 메뉴, 리뷰, 인포 탭 변경 스크립트 ↓
+$(document).on('click', '.listTab li.choiceSort', function(){
+	$('.listTab li').removeClass('selected');
+	$(this).addClass('selected');
+	$('.subSection').hide();
+	$('.subSectionTip').hide();
+
+	if($(this).hasClass('titleTabMenu')){
+		$('.subSection.itemMenuGroup').show();
+		$('.subSectionTip').show();
+	}
+	else if($(this).hasClass('titleTabReview')) {
+		$('.subSection.reviewGroup').show();
+	}
+	else if($(this).hasClass('titleTabInfo')) {
+		$('.subSection.storeInfoGroup').show();
+	}
+	else if($(this).hasClass('titleTabPast')) {
+		$('.subSection.pastOrderGroup').show();
+	}
+});
+
+// :: 매장 이미지 슬라이드
+/*$('.storeTitleSlider').slick({
+	dots:false,
+	prevArrow:false,
+	nextArrow:false,
+	autoplay : true,
+	autoplaySpeed : 4000,
+	// dotsClass:'mainBannerDots'
+});*/
+
+// :: 제목 클릭 시 상품 리스트 on/off 스크립트
+$(document).on('click', '.menuSubTitle', function(){
+	$(this).next('ul').toggle();
+	$(this).toggleClass('deactivated');
+})
+
+</script>
+</body>
+</html>
