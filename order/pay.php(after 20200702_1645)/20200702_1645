@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<?php include $_SERVER['DOCUMENT_ROOT'] .  '/common/pages/head.php';
+$checkUser 								=	'Y';
+if(substr($User->userCode(), 0, 1) == 'U'){
+	$checkUser 							=	'N';
+}
+?>
+<body>
+<div class="container main" id="wrap">
+	<div class="contents">
+		<div class="section headLineSect">
+			<a href="../" class="backArrow">
+				<img src="/common/img/backArrowThin.png">
+			</a>
+			<span class="headTitle">주문하기</span>
+		</div>
+		<form id="frm">
+			<input type="hidden" name="token" value="<?=$_SESSION['token'][$Common->nowPage()]?>">
+			<input type="hidden" name="payMethod" value="1">
+			<input type="hidden" name="deliveryPrice" value="0">
+			<input type="hidden" name="amount" value="0">
+			<input type="hidden" name="totGoodsPrice" value="0">
+			<input type="hidden" id="zip" name="receiveZip">
+			<input type="hidden" id="roadAddr" name="orderRoadAddr">
+			<input type="hidden" id="jibunAddr" name="orderJibunAddr">
+			<input type="hidden" id="latitude" name="orderLatitude">
+			<input type="hidden" id="longitude" name="orderLongitude">
+			<input type="hidden" id="userAgent" name="userAgent">
+			<input type="hidden" id="isDeliveryAval" name="isDeliveryAval" value="N">
+			<input type="hidden" id="couponListIdx" name="couponListIdx" value="0">
+			<input type="hidden" id="couponAmount" name="couponAmount">
+			<input type="hidden" id="tempCouponCode" name="tempCouponCode">
+			<input type="hidden" id="couponCheck" name="couponCheck" value="N">
+			<input type="hidden" id="originAmount" name="originAmount">
+		<div class="section orderSect">
+            <div class="btnGroup conTopSort">
+                <a class="callBtn" href="javascript:void(0);">전화하기</a>
+            </div>
+			<div class="orderInfo takeMethod">
+				<div class="infoTitle">수령방식</div>
+				<div>
+					<div class="takeTypeCheck">
+						<div class="checkboxGroup">
+							<input type="radio" name="howToReceived" checked value="1" onclick="showAddr();">
+							<label></label>
+						</div>
+						<div>배달</div>
+					</div>
+					<div class="takeTypeCheck">
+						<div class="checkboxGroup">
+							<input type="radio" name="howToReceived" value="2" onclick="hideAddr();">
+							<label></label>
+						</div>
+						<div>포장</div>
+					</div>
+				</div>
+			</div>
+
+
+			<div class="orderInfo address">
+				<div class="infoTitle">구매자정보</div>
+				<a href="javascript:openPostcode();" class="changeBtn address">주소검색</a>
+				<div class="roadAddress">
+					<!-- ::: 인풋박스를 하나로.  -->
+					<div class="addressBox ">
+						<input id="addr1" placeholder="주소를 등록해주세요" readonly name="receiveAddr" class="tbox full" onclick="openPostcode();">
+					</div>
+					<!-- <div class="addressBox">
+						<input id="zip" readonly name="receiveZip">
+					</div> -->
+
+				</div>
+				<div class="customInfo">
+					<input class="tbox full" placeholder="상세주소를 입력해 주세요" id="addr2" name="receiveAddrDetail" onclick="checkTrim();">
+					<input class="tbox full onlyNum" placeholder="연락처를 입력해 주세요" name="receiveMobile" id="receiveMobile" maxlength="11">
+				</div>
+			</div>
+			<div class="orderInfo request">
+				<div class="infoTitle">요청사항</div>
+				<div class="customInfo">
+					<input class="tbox full" placeholder="예) 포장 꼼꼼히 해주세요." name="requestMsg" id="requestMsg">
+				</div>
+				<div class="disposalCheck">
+					<div>
+						<input type="checkbox" name="isDisposable" value="1">
+						<label></label>
+					</div>
+					<div>일회용품 안 주셔도 됩니다.</div>
+				</div>
+			</div>
+			<?php if($checkUser == 'Y'){ ?>
+			<div class="orderInfo request">
+				<div class="infoTitle">쿠폰사용</div>
+				<div class="customInfo">
+					<a href="javascript:checkCouponCode();" class="confirmBtn">쿠폰확인</a>
+					<input class="tbox full" placeholder="쿠폰코드를 입력해주세요." name="couponCode" id="couponCode">
+					<span id="couponSel"></span>
+				</div>
+			</div>
+			<?php } ?>
+			<div class="orderInfo payment">
+				<div class="infoTitle">결제수단</div>
+				<ul class="payMethod">
+					<li class="payTypeGroup">
+						<div class="payTypeCheck">
+							<div class="checkboxGroup">
+								<input type="radio" name="howToPay" checked value="1">
+								<label></label>
+							</div>
+							<div>앱에서 결제</div>
+						</div>
+
+
+						<!-- ::: 셀렉트 박스 대신 버튼 형식으로 교체함. single -->
+						<!-- <div class="sbox">
+							<a href="javascript:void(0);" class="selectBtn" id="payMethodSel1">- 선택 -</a>
+							<ul>
+								<li>
+									<a href="javascript:setPayMethod(1, '신용카드')">신용카드</a>
+								</li>
+								<li>
+									<a href="javascript:setPayMethod(2, '휴대폰 결제')">휴대폰 결제</a>
+								</li>
+							</ul>
+						</div> -->
+						<div class="btnGroup paySelectSort activated">
+							<a href="javascript:setPayMethod(1);" class="paySelectBtn activated">신용카드 결제</a>
+							<a href="javascript:setPayMethod(2);" class="paySelectBtn" id="cellphone">휴대폰 결제</a>
+						</div>
+
+
+
+					
+					</li>
+					<li class="payTypeGroup">
+						<div class="payTypeCheck">
+							<div class="checkboxGroup">
+								<input type="radio" name="howToPay" value="2" onclick="setPayMethod(1)">
+								<label></label>
+							</div>
+							<div>현장결제</div>
+						</div>
+
+
+
+
+						<!-- ::: 셀렉트 박스 대신 버튼 형식으로 교체함. single -->
+						<!-- <div class="sbox hide">
+							<a href="javascript:void(0);" class="selectBtn" id="payMethodSel2">- 선택 -</a>
+							<ul>
+								<li>
+									<a href="javascript:setPayMethod(3, '신용카드');">신용카드</a>
+								</li>
+								<li>
+									<a href="javascript:setPayMethod(4, '현금 결제');">현금 결제</a>
+								</li>
+							</ul>
+						</div> -->
+						<div class="btnGroup paySelectSort">
+							<a href="javascript:setPayMethod(1);" class="paySelectBtn activated">신용카드 결제</a>
+							<a href="javascript:setPayMethod(3);" class="paySelectBtn">현금 결제</a>
+						</div>
+
+
+
+
+					</li>
+				</ul>
+			</div>
+			<div class="orderInfo charge">
+				<div class="infoTitle">배달주문내역</div>
+				<div class="chargeItemInfo" id="cartOpList">
+
+
+
+					<!-- ::: 표시되는 내용을 아래와 같이 변경해야 함. single -->
+					<div>
+						<span class="goodsName">감자튀김 X 4</span>
+						<span class="goodsPrice">2,500 원</span>
+					</div>
+					<div class="goodsOptions">
+						<div>
+							<span>맛 : MILD + 0원</span>
+						</div>
+						<div>
+							<span>크기 : LARGE + 1,000원</span>
+						</div>
+					</div>
+				</div>
+				<div class="priceInfoGroup">
+					<div class="annexPrice">
+						<div>
+							<span>배달팁</span>
+							<span id="deliveryPrice"></span>
+						</div>
+					</div>
+					<div class="totalPrice">
+						<div class="couponPriceBox hide">
+							<span>쿠폰할인금액</span>
+							<span id="couponPrice">0</span>
+						</div>
+						<div>
+							<span>결제금액</span>
+							<span id="tot"></span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="section noticeSect">
+			<div class="prescriptGroup">
+				<div class="prescriptCon">
+					<div class="title">배달상품주의사항</div>
+					<div class="ruleText">
+						<div>- 배달이 시작된 상품은 취소할 수 없습니다.</div>
+						<div>- 주문량에 따라 배달 시간이 길어질 수 있습니다.</div>
+					</div>
+				</div>
+
+				<div class="prescriptCon">
+					<div class="title">개인정보 제 3자 제공</div>
+					<div class="ruleText">
+						- 정확하고 신속한 배달을 위해 개인정보를 제 3자에게 제공합니다.
+					</div>
+				</div>
+			</div>
+			<div class="acceptCheck">
+
+
+				<!-- ::: 체크박스 제거하고, 안내용 텍스트만 남김. single -->
+				<!-- <div class="checkboxGroup">
+					<input type="checkbox" name="checkAgree" value="1">
+					<label></label>
+				</div> -->
+				<div>위 내용을 확인하였으며 결제에 동의합니다.</div>
+
+
+			</div>
+		</div>
+		</form>
+		<form id="frmPG" method="post" target="_self" action="https://web.nicepay.co.kr/v3/smart/smartPayment.jsp" accept-charset="euc-kr"></form>
+		<div class="btnBox shopOrderBtn">
+			<!-- <a class="sumitBtn" href="javascript:insert_order(0);">결제하기</a> -->
+			<a class="sumitBtn" href="javascript:insert_order()">결제하기</a>
+		</div>
+	</div>
+</div>
+
+<!-- :: 짧게 나타났다 사라지는 팝업 내용 -->
+<div class="popup infoDisplaySort">
+	<a href="javascript:void(0)" id="popupMsg"></a>
+</div>
+
+<script src="/order/js/order.js"></script>
+<script src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script>
+<script src="//dapi.kakao.com/v2/maps/sdk.js?appkey=709174e2b38600f5b9f4985da65f0ab8&libraries=services"></script>
+<script>
+
+// :: 셀렉트박스 옵션목록 표시/숨김
+$(document).on('click', '.sbox a', function(){
+
+	let option		=	$(this).siblings('ul');
+
+	option.slideToggle('400');
+});
+// :: 셀렉트박스 선택지 클릭 시, 옵션목록 숨김
+$(document).on('click', '.sbox ul li a', function(){
+	$(this).closest('ul').hide();
+});
+
+
+
+// :: 결제수단 선택 시, 해당 결제수단에 맞는 셀렉트 박스만 표시되게 하는 스크립트
+$(document).on('click', '.checkboxGroup input', function(){
+	$('input[name="payMethod"]').val(1);
+	$('.btnGroup.paySelectSort').removeClass('activated');
+	$('.btnGroup.paySelectSort').children('.paySelectBtn').removeClass('activated');
+	if($(this).is(':checked')){
+		$(this).closest('.payTypeCheck').siblings('.btnGroup.paySelectSort').addClass('activated');
+		$(this).closest('.payTypeCheck').siblings('.btnGroup.paySelectSort').children('.paySelectBtn:first-child').addClass('activated');
+	}
+})
+
+//  :: 결제 수단 버튼 누르면 불 들어오게 하는 스크립트. 
+$(document).on('click', '.paySelectBtn', function(){
+	if($(this).attr('id') == 'cellphone'){
+		return;
+	} else {
+		$('.paySelectBtn').removeClass('activated');
+		$(this).addClass('activated');
+	}
+});
+
+</script>
+</body>
+</html>
